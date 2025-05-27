@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "首頁",
+    "services": "服務項目",
+    "projects": "專案",
+    "about": "關於我們",
+    "contact": "聯絡我們"
+  },
+  "buttons": {
+    "explore": "探索服務",
+    "contact": "聯絡我們",
+    "details": "查看詳情",
+    "send": "發送訊息",
+    "call": "立即通話"
+  },
+  "sections": {
+    "vision": "我們的願景",
+    "services": "專業服務",
+    "services_subtitle": "我們提供全方位的工程解決方案",
+    "projects": "精選專案",
+    "projects_subtitle": "探索我們的代表作品",
+    "about": "關於我們",
+    "testimonials": "客戶評價",
+    "testimonials_subtitle": "聽聽我們客戶的心聲",
+    "contact": "聯絡我們",
+    "contact_subtitle": "讓我們開始合作"
+  },
+  "footer": {
+    "quick_links": "快速鏈接",
+    "services": "服務",
+    "newsletter": "訂閱最新資訊",
+    "newsletter_desc": "獲取我們的行業洞察和公司動態",
+    "email_placeholder": "您的電子郵件",
+    "copyright": "版權所有",
+    "privacy": "隱私政策",
+    "terms": "條款和條件"
+  },
+  "common": {
+    "loading": "載入中"
+  }
+}

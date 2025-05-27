@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="葵涌醫院2期重建項目 - 峰盛工程有限公司的重點醫療建設項目，融合現代設計與功能的社區醫院">
+    <meta name="keywords" content="葵涌醫院,醫院重建,峰盛工程,醫療建築,香港醫院,精神科醫院">
+    <meta name="author" content="峰盛工程有限公司">
+    <title>葵涌醫院2期重建項目 - 峰盛工程有限公司</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery.min.css">
+    <script src="js/lang.js" defer></script>
+    <style>
+        /* Project Detail Page Specific Styles - Same as hongkong-commercial.html but with different colors */
+        .project-hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/KCH2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-hero-content {
+            text-align: center;
+            color: var(--color-text-light);
+            max-width: 80rem;
+            padding: 0 2rem;
+            z-index: 2;
+        }
+        
+        .project-hero-title {
+            font-size: 6rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #fff, var(--color-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .project-subtitle {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--color-text-light);
+        }
+        
+        .project-section {
+            padding: 10rem 5%;
+            position: relative;
+        }
+        
+        .project-section.light {
+            background-color: var(--color-light);
+            color: var(--color-text-dark);
+        }
+        
+        .project-section.dark {
+            background-color: var(--color-dark);
+            color: var(--color-text-light);
+        }
+        
+        .project-container {
+            max-width: 120rem;
+            margin: 0 auto;
+        }
+        
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 5rem 0;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-normal);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .info-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-secondary);
+        }
+        
+        .info-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .info-text {
+            font-size: 1.6rem;
+        }
+        
+        .project-description {
+            margin: 5rem 0;
+        }
+        
+        .project-description p {
+            font-size: 1.7rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+        
+        .project-image-gallery {
+            margin: 5rem 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(2, 30rem);
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            position: relative;
+        }
+        
+        .gallery-item:nth-child(1) {
+            grid-column: span 8;
+            grid-row: span 1;
+        }
+        
+        .gallery-item:nth-child(2) {
+            grid-column: span 4;
+            grid-row: span 1;
+        }
+        
+        .gallery-item:nth-child(3) {
+            grid-column: span 4;
+            grid-row: span 1;
+        }
+        
+        .gallery-item:nth-child(4) {
+            grid-column: span 8;
+            grid-row: span 1;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        
+        .progress-section {
+            margin: 5rem 0;
+        }
+        
+        .progress-timeline {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            position: relative;
+        }
+        
+        .progress-timeline::before {
+            content: "";
+            position: absolute;
+            top: 3.5rem;
+            left: 0;
+            width: 100%;
+            height: 0.2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+        
+        .timeline-point {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            width: 20%;
+        }
+        
+        .point-marker {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            top: 2.5rem;
+        }
+        
+        .point-date {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+        }
+        
+        .point-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .point-description {
+            font-size: 1.4rem;
+            text-align: center;
+            color: var(--color-text-muted);
+        }
+        
+        .timeline-point.completed .point-marker {
+            background: var(--gradient-secondary);
+        }
+        
+        .timeline-point.completed::after {
+            content: "";
+            position: absolute;
+            top: 3.5rem;
+            left: 0;
+            width: 100%;
+            height: 0.2rem;
+            background: var(--gradient-secondary);
+            z-index: 1;
+        }
+        
+        .timeline-point:first-child::after {
+            width: 50%;
+            left: 50%;
+        }
+        
+        .timeline-point:last-child::after {
+            width: 0;
+        }
+        
+        .challenge-section {
+            margin: 5rem 0;
+        }
+        
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .challenge-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-normal);
+        }
+        
+        .challenge-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .challenge-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-secondary);
+        }
+        
+        .challenge-text {
+            font-size: 1.6rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .solution-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+        
+        .solution-text {
+            font-size: 1.6rem;
+            line-height: 1.7;
+        }
+        
+        .testimonial-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/KCH2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 8rem 5%;
+            text-align: center;
+        }
+        
+        .testimonial-content {
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+        
+        .testimonial-quote {
+            font-size: 2.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonial-author {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .testimonial-position {
+            font-size: 1.6rem;
+            color: var(--color-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        .related-projects {
+            margin: 5rem 0;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .related-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 35rem;
+        }
+        
+        .related-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .related-item:hover .related-image {
+            transform: scale(1.1);
+        }
+        
+        .related-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: var(--color-text-light);
+            transition: all var(--transition-normal);
+        }
+        
+        .related-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .related-category {
+            font-size: 1.4rem;
+            color: var(--color-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .related-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--color-secondary);
+            color: var(--color-text-light);
+            font-size: 1.4rem;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-normal);
+        }
+        
+        .related-link:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 8rem 5%;
+        }
+        
+        .cta-title {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-text {
+            font-size: 1.8rem;
+            max-width: 70rem;
+            margin: 0 auto 3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Features Section Specific */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+            gap: 3rem;
+            margin: 5rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-normal);
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-secondary);
+        }
+        
+        .feature-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-text {
+            font-size: 1.6rem;
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 992px) {
+            .project-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-rows: repeat(4, 25rem);
+            }
+            
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(2),
+            .gallery-item:nth-child(3),
+            .gallery-item:nth-child(4) {
+                grid-column: span 12;
+                grid-row: span 1;
+            }
+            
+            .progress-timeline {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4rem;
+            }
+            
+            .timeline-point {
+                width: 40%;
+            }
+            
+            .timeline-point::after {
+                display: none;
+            }
+            
+            .progress-timeline::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero-title {
+                font-size: 4.5rem;
+            }
+            
+            .project-subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-point {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .project-hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .project-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-quote {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="cube">
+                <div class="side front"></div>
+                <div class="side back"></div>
+                <div class="side top"></div>
+                <div class="side bottom"></div>
+                <div class="side left"></div>
+                <div class="side right"></div>
+            </div>
+            <h2 class="loading-text">LOADING<span>...</span></h2>
+        </div>
+    </div>
+
+    <div class="theme-toggle">
+        <div class="toggle-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+    </div>
+
+    <div class="lang-selector">
+        <div class="lang-btn">
+            繁體 <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="lang-dropdown">
+            <ul>
+                <li><a href="#" data-lang="zh-hant">繁體</a></li>
+                <li><a href="#" data-lang="en">EN</a></li>
+                <li><a href="#" data-lang="zh-hans">简体</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="navigation-panel">
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-menu">
+            <div class="nav-brand">
+                <div class="logo">峰盛</div>
+                <div class="logo-text">TOP CHANCE ENGINEERING</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link" data-text="首頁">首頁</a></li>
+                    <li><a href="index.html#services" class="nav-link" data-text="服務項目">服務項目</a></li>
+                    <li><a href="index.html#projects" class="nav-link" data-text="專案">專案</a></li>
+                    <li><a href="index.html#about" class="nav-link" data-text="關於我們">關於我們</a></li>
+                    <li><a href="index.html#contact" class="nav-link" data-text="聯絡我們">聯絡我們</a></li>
+                </ul>
+            </nav>
+            <div class="nav-footer">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="project-hero">
+            <div class="project-hero-content">
+                <h1 class="project-hero-title">葵涌醫院2期重建項目</h1>
+                <p class="project-subtitle">現代化醫院設計，融合設計與功能的社區精品</p>
+                <a href="#project-overview" class="btn-primary">了解專案</a>
+            </div>
+        </section>
+
+        <!-- Project Overview Section -->
+        <section id="project-overview" class="project-section light">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">專案概述</h2>
+                    <p class="section-subtitle">醫院重建項目 | 2024年完成</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="project-info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="info-title">專案類型</h3>
+                        <p class="info-text">精神科醫院綜合體</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="info-title">位置</h3>
+                        <p class="info-text">葵涌醫院</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="info-title">完成時間</h3>
+                        <p class="info-text">2024年10月</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <h3 class="info-title">建築面積</h3>
+                        <p class="info-text">65,000平方米</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="info-title">病房單位</h3>
+                        <p class="info-text">450戶</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3 class="info-title">政府投放金額</h3>
+                        <p class="info-text">Contract No.: SSG502 約70億港元</p>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <p>
+                        配合現代臨床實踐，整合新科技，以維持香港的世界一流醫療服務水平，重建工程勢在必行。該項目鋁板幕牆由峰盛工程有限公司生產和建造，是我們在政府項目中的旗艦項目。
+                    </p>
+                    <p>
+                        新醫院的設計將專注於患者的康復歷程，並確保每個步驟都經過精心計劃，以患者為中心，在對待患者隱私和尊嚴方面具備細膩感性和同情心。在設計的各個方面都進行了認真的考慮，從分隔不同的運輸流量 – 患者、訪客、員工、車輛以及服務，到精心設計的山莊般的室內環境，創造「家外之家」。
+                    </p>
+                    <p>
+                        提供了居家般的舒適和溫暖，創造一個親切自在的環境，有利於恢復和療養的過程。以人為本自始至終作為設計重點，為病人和訪客提供溫馨的體驗。住院病房提供寬敞的病房花園、露臺、起居室和餐廳，這些都構成了建築語言的一部分，將室內設計和空間規劃與建築圍護結構相結合，從而實現整體設計。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="project-section dark">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">項目特色</h2>
+                    <p class="section-subtitle">現代化線條設計美感</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="feature-title">可持續設計</h3>
+                        <p class="feature-text">
+                            採用綠色建築設計理念，包括太陽能發電系統、雨水回收利用、LED照明和高效能源管理系統，減少能源消耗和碳排放。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">安全保障</h3>
+                        <p class="feature-text">
+                            配備先進的安全系統，包括24小時監控、智能門禁控制、面部識別技術和緊急呼叫系統，為居民提供全方位的安全保障。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3 class="feature-title">健康生活</h3>
+                        <p class="feature-text">
+                            配備空氣淨化系統、水淨化設備和低VOC材料，打造健康的室內環境。多個綠色空間和運動設施促進居民的身心健康。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3 class="feature-title">智能家居</h3>
+                        <p class="feature-text">
+                            所有住宅單位均配備智能家居系統，居民可通過手機應用程序控制照明、溫度、安全系統和家電，實現便捷的現代生活。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="feature-title">交通便利</h3>
+                        <p class="feature-text">
+                            位於瑪麗醫院旁邊區域，步行距離內有地鐵站和多條巴士線路。配備充足的停車位和電動車充電站，方便居民出行。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">社區空間</h3>
+                        <p class="feature-text">
+                            設有多個公共空間和社區設施，包括屋頂花園、兒童遊樂區、社區復康中心和休閒區，促進居民交流和社區融合。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Gallery Section -->
+        <section class="project-section light">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">專案圖集</h2>
+                    <p class="section-subtitle">現代化醫院綜合體的視覺展示</p>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="project-image-gallery">
+                    <div id="lightgallery" class="gallery-grid">
+                        <div class="gallery-item" data-src="images/KCH2.jpg">
+                            <img src="images/KCH2.jpg" alt="葵涌醫院綜合體外觀" class="gallery-image" loading="lazy" width="800" height="600">
+                        </div>
+                        <div class="gallery-item" data-src="images/KCH8.jpeg">
+                            <img src="images/KCH8.jpeg" alt="醫院大堂" class="gallery-image" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="gallery-item" data-src="images/KCH4.jpeg">
+                            <img src="images/KCH4.jpeg" alt="病房外觀" class="gallery-image" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="gallery-item" data-src="images/KCH7.jpeg">
+                            <img src="images/KCH7.jpeg" alt="醫院內部" class="gallery-image" loading="lazy" width="800" height="600">
+                        </div>
+                        <div class="gallery-item" data-src="images/KCH3.jpeg">
+                            <img src="images/KCH3.jpeg" alt="葵涌醫院側面外觀" class="gallery-image" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="gallery-item" data-src="images/KCH5.jpeg">
+                            <img src="images/KCH5.jpeg" alt="醫院大堂入口" class="gallery-image" loading="lazy" width="400" height="300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Progress Section -->
+        <section class="project-section dark">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">專案進程</h2>
+                    <p class="section-subtitle">從構思到完成的時間線</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-timeline">
+                        <div class="timeline-point completed">
+                            <div class="point-marker"></div>
+                            <div class="point-date">2019年4月</div>
+                            <div class="point-title">專案啟動</div>
+                            <div class="point-description">土地收購和規劃設計階段</div>
+                        </div>
+
+                        <div class="timeline-point completed">
+                            <div class="point-marker"></div>
+                            <div class="point-date">2019年11月</div>
+                            <div class="point-title">設計批准</div>
+                            <div class="point-description">建築和設計方案獲得批准</div>
+                        </div>
+
+                        <div class="timeline-point completed">
+                            <div class="point-marker"></div>
+                            <div class="point-date">2020年2月</div>
+                            <div class="point-title">基礎工程</div>
+                            <div class="point-description">地基和地下設施施工</div>
+                        </div>
+
+                        <div class="timeline-point completed">
+                            <div class="point-marker"></div>
+                            <div class="point-date">2023年6月</div>
+                            <div class="point-title">主體完工</div>
+                            <div class="point-description">三座塔樓結構和外立面完成</div>
+                        </div>
+
+                        <div class="timeline-point completed">
+                            <div class="point-marker"></div>
+                            <div class="point-date">2024年10月</div>
+                            <div class="point-title">項目交付</div>
+                            <div class="point-description">室內裝修和配套設施完成</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Solutions Section -->
+        <section class="project-section light">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">挑戰與解決方案</h2>
+                    <p class="section-subtitle">我們如何克服項目中的技術難題</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="challenge-section">
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3 class="challenge-title">密集城市環境中的建設</h3>
+                            <p class="challenge-text">
+                                同時需要考慮對周圍環境和居民的影響。
+                            </p>
+                            <h4 class="solution-title">解決方案</h4>
+                            <p class="solution-text">
+                                施工前詳細制定了噪音和塵埃控制計劃，並與社區保持密切溝通，最大限度地減少了對周邊環境的影響。
+                            </p>
+                        </div>
+
+                        <div class="challenge-card">
+                            <h3 class="challenge-title">複雜的地下管線處理</h3>
+                            <p class="challenge-text">
+                                項目地下存在複雜的公共設施和服務管線，包括水、電、煤氣和通訊等，在施工過程中需要特別小心處理。
+                            </p>
+                            <h4 class="solution-title">解決方案</h4>
+                            <p class="solution-text">
+                                利用先進的3D地下管線掃描技術，精確繪製了地下設施分佈圖，並開發了專門的施工方案和保護措施，確保在基礎施工過程中不會損壞現有管線。
+                            </p>
+                        </div>
+
+                        <div class="challenge-card">
+                            <h3 class="challenge-title">450套住宅的優化設計</h3>
+                            <p class="challenge-text">
+                                需要在有限的面積內設計450套不同類型的住宅，既要最大化利用空間，又要確保每套住宅的舒適性和功能性。
+                            </p>
+                            <h4 class="solution-title">解決方案</h4>
+                            <p class="solution-text">
+                                採用了智能空間規劃和模塊化設計方法，充分考慮了不同家庭的需求，通過創新的設計方案，成功地在每個單位中創造了開放、靈活和高效的生活空間。
+                            </p>
+                        </div>
+
+                        <div class="challenge-card">
+                            <h3 class="challenge-title">疫情期間的施工管理</h3>
+                            <p class="challenge-text">
+                                項目在COVID-19疫情期間進行，面臨勞動力短缺、供應鏈中斷和嚴格的健康安全要求等挑戰。
+                            </p>
+                            <h4 class="solution-title">解決方案</h4>
+                            <p class="solution-text">
+                                實施了全面的疫情應對計劃，包括現場健康監測、分區施工和靈活的工作安排。同時建立了多元化的供應鏈網絡，確保了關鍵材料的及時供應，最終項目僅延遲了兩個月。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="testimonial-section">
+            <div class="testimonial-content">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-quote">
+                    峰盛工程在葵涌醫院項目中的表現令人印象深刻。他們不僅按時交付了高品質的建築，還關注細節，將可持續發展理念融入到每個環節。作為項目主承建商，我們對這個項目的成功感到非常滿意，它已成為醫院項目的經典項目。
+                </p>
+                <div class="testimonial-author">高先生</div>
+                <div class="testimonial-position">公司總裁</div>
+            </div>
+        </section>
+
+        <!-- Related Projects Section -->
+        <section class="project-section light">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">相關專案</h2>
+                    <p class="section-subtitle">探索更多我們的建築作品</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="related-projects">
+                    <div class="related-grid">
+                        <div class="related-item">
+                            <img src="images/KCH4.jpeg" alt="葵涌醫院外觀" class="related-image" loading="lazy" width="450" height="350">
+                            <div class="related-overlay">
+                                <h3 class="related-title">葵涌醫院外觀</h3>
+                                <p class="related-category">醫療建築 | 2023年完成</p>
+                                <a href="hongkong-commercial.html" class="related-link">查看詳情</a>
+                            </div>
+                        </div>
+
+                        <div class="related-item">
+                            <img src="images/KCH6.jpeg" alt="葵涌醫院設施" class="related-image" loading="lazy" width="450" height="350">
+                            <div class="related-overlay">
+                                <h3 class="related-title">葵涌醫院設施</h3>
+                                <p class="related-category">醫療建築 | 2021年完成</p>
+                                <a href="newterritories-industrial.html" class="related-link">查看詳情</a>
+                            </div>
+                        </div>
+
+                        <div class="related-item">
+                            <img src="images/KCH7.jpeg" alt="葵涌醫院內部" class="related-image" loading="lazy" width="450" height="350">
+                            <div class="related-overlay">
+                                <h3 class="related-title">葵涌醫院內部</h3>
+                                <p class="related-category">醫療建築 | 2020年完成</p>
+                                <a href="#" class="related-link">查看詳情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section dark">
+            <div class="project-container">
+                <h2 class="cta-title">想要打造您的理想住宅項目？</h2>
+                <p class="cta-text">
+                    峰盛工程有限公司擁有豐富的住宅開發經驗，我們的專業團隊能為您提供從設計到施工的完整解決方案，打造高品質、可持續發展的住宅社區。
+                </p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="btn-primary">聯絡我們</a>
+                    <a href="index.html#services" class="btn-secondary">了解服務</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="logo">峰盛</div>
+                    <p>建築創新 • 工程卓越</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>快速鏈接</h3>
+                    <ul>
+                        <li><a href="index.html">首頁</a></li>
+                        <li><a href="index.html#services">服務項目</a></li>
+                        <li><a href="index.html#projects">專案</a></li>
+                        <li><a href="index.html#about">關於我們</a></li>
+                        <li><a href="index.html#contact">聯絡我們</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>服務</h3>
+                    <ul>
+                        <li><a href="#">建築工程</a></li>
+                        <li><a href="#">結構工程</a></li>
+                        <li><a href="#">幕牆工程</a></li>
+                        <li><a href="#">裝修工程</a></li>
+                        <li><a href="#">工程設計</a></li>
+                        <li><a href="#">項目管理</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>訂閱最新資訊</h3>
+                    <p>獲取我們的行業洞察和公司動態</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="您的電子郵件">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 峰盛工程有限公司 版權所有 | All Rights Reserved</p>
+                <div class="footer-legal">
+                    <a href="#">隱私政策</a>
+                    <a href="#">條款和條件</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.preloader').classList.add('hide');
+            }, 1500);
+        });
+
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const toggleIcon = document.querySelector('.toggle-icon i');
+        
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            toggleIcon.classList.toggle('fa-moon');
+            toggleIcon.classList.toggle('fa-sun');
+        });
+
+        // Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
+        });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(function() {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.info-card, .feature-card, .gallery-item, .challenge-card, .related-item');
+            
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                if (rect.top <= windowHeight * 0.85) {
+                    el.classList.add('aos-animate');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Add data-aos attributes to elements
+        document.querySelectorAll('.info-card, .feature-card').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-delay', (index * 100) % 500);
+        });
+        
+        document.querySelectorAll('.gallery-item').forEach((el, index) => {
+            el.setAttribute('data-aos', 'zoom-in');
+            el.setAttribute('data-aos-delay', (index * 100) % 500);
+        });
+        
+        document.querySelectorAll('.challenge-card').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-delay', (index * 100) % 500);
+        });
+        
+        document.querySelectorAll('.related-item').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-delay', (index * 100) % 500);
+        });
+
+        // Language selector
+        const langBtn = document.querySelector('.lang-btn');
+        const langDropdown = document.querySelector('.lang-dropdown');
+        
+        langBtn.addEventListener('click', function() {
+            langBtn.classList.toggle('active');
+            langDropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                langBtn.classList.remove('active');
+                langDropdown.classList.remove('active');
+            }
+        });
+    </script>
+    
+    <!-- Gallery library -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    
+    <script>
+        // Initialize lightGallery
+        document.addEventListener('DOMContentLoaded', function() {
+            lightGallery(document.getElementById('lightgallery'), {
+                plugins: [lgZoom, lgThumbnail],
+                speed: 500,
+                download: false,
+                counter: true,
+                mousewheel: true
+            });
+        });
+    </script>
+</body>
+</html>

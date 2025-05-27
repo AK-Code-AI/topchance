@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "buttons": {
+    "explore": "Explore Services",
+    "contact": "Contact Us",
+    "details": "View Details",
+    "send": "Send Message",
+    "call": "Call Now"
+  },
+  "sections": {
+    "vision": "Our Vision",
+    "services": "Professional Services",
+    "services_subtitle": "We provide comprehensive engineering solutions",
+    "projects": "Featured Projects",
+    "projects_subtitle": "Explore our representative works",
+    "about": "About Us",
+    "testimonials": "Testimonials",
+    "testimonials_subtitle": "Hear from our clients",
+    "contact": "Contact Us",
+    "contact_subtitle": "Let's start collaborating"
+  },
+  "footer": {
+    "quick_links": "Quick Links",
+    "services": "Services",
+    "newsletter": "Subscribe to Newsletter",
+    "newsletter_desc": "Get our industry insights and company updates",
+    "email_placeholder": "Your Email",
+    "copyright": "All Rights Reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions"
+  },
+  "common": {
+    "loading": "Loading"
+  }
+}

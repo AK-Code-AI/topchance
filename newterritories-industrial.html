@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新界工業創新園區 - 峰盛工程有限公司</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/lang.js" defer></script>
+    <style>
+        /* Project Detail Page Specific Styles - Similar to other project pages but with industrial theme */
+        .project-hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('6eaj8kacmu.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-hero-content {
+            text-align: center;
+            color: var(--color-text-light);
+            max-width: 80rem;
+            padding: 0 2rem;
+            z-index: 2;
+        }
+        
+        .project-hero-title {
+            font-size: 6rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #fff, var(--color-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .project-subtitle {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--color-text-light);
+        }
+        
+        .project-section {
+            padding: 10rem 5%;
+            position: relative;
+        }
+        
+        .project-section.light {
+            background-color: var(--color-light);
+            color: var(--color-text-dark);
+        }
+        
+        .project-section.dark {
+            background-color: var(--color-dark);
+            color: var(--color-text-light);
+        }
+        
+        .project-container {
+            max-width: 120rem;
+            margin: 0 auto;
+        }
+        
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 5rem 0;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-normal);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .info-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-secondary);
+        }
+        
+        .info-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .info-text {
+            font-size: 1.6rem;
+        }
+        
+        .project-description {
+            margin: 5rem 0;
+        }
+        
+        .project-description p {
+            font-size: 1.7rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+        
+        .project-image-gallery {
+            margin: 5rem 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(2, 30rem);
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            position: relative;
+        }
+        
+        .gallery-item:nth-child(1) {
+            grid-column: span 8;
+            grid-row: span 1;
+        }
+        
+        .gallery-item:nth-child(2) {
+            grid-column: span 4;
+            grid-row: span 1;
+        }
+        
+        .gallery-item:nth-child(3) {
+            grid-column: span 4;
+            grid-row: span 1;
+        }
+        
+        .gallery-item:nth-child(4) {
+            grid-column: span 8;
+            grid-row: span 1;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+        
+        .progress-section {
+            margin: 5rem 0;
+        }
+        
+        .progress-timeline {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            position: relative;
+        }
+        
+        .progress-timeline::before {
+            content: "";
+            position: absolute;
+            top: 3.5rem;
+            left: 0;
+            width: 100%;
+            height: 0.2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+        
+        .timeline-point {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            width: 20%;
+        }
+        
+        .point-marker {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            top: 2.5rem;
+        }
+        
+        .point-date {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+        }
+        
+        .point-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .point-description {
+            font-size: 1.4rem;
+            text-align: center;
+            color: var(--color-text-muted);
+        }
+        
+        .timeline-point.completed .point-marker {
+            background: var(--gradient-secondary);
+        }
+        
+        .timeline-point.completed::after {
+            content: "";
+            position: absolute;
+            top: 3.5rem;
+            left: 0;
+            width: 100%;
+            height: 0.2rem;
+            background: var(--gradient-secondary);
+            z-index: 1;
+        }
+        
+        .timeline-point:first-child::after {
+            width: 50%;
+            left: 50%;
+        }
+        
+        .timeline-point:last-child::after {
+            width: 0;
+        }
+        
+        .challenge-section {
+            margin: 5rem 0;
+        }
+        
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .challenge-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-normal);
+        }
+        
+        .challenge-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .challenge-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-secondary);
+        }
+        
+        .challenge-text {
+            font-size: 1.6rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .solution-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+        
+        .solution-text {
+            font-size: 1.6rem;
+            line-height: 1.7;
+        }
+        
+        .testimonial-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('gzbk84jgnq.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 8rem 5%;
+            text-align: center;
+        }
+        
+        .testimonial-content {
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+        
+        .testimonial-quote {
+            font-size: 2.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonial-author {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .testimonial-position {
+            font-size: 1.6rem;
+            color: var(--color-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        .related-projects {
+            margin: 5rem 0;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .related-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 35rem;
+        }
+        
+        .related-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .related-item:hover .related-image {
+            transform: scale(1.1);
+        }
+        
+        .related-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: var(--color-text-light);
+            transition: all var(--transition-normal);
+        }
+        
+        .related-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .related-category {
+            font-size: 1.4rem;
+            color: var(--color-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .related-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--color-secondary);
+            color: var(--color-text-light);
+            font-size: 1.4rem;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-normal);
+        }
+        
+        .related-link:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 8rem 5%;
+        }
+        
+        .cta-title {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-text {
+            font-size: 1.8rem;
+            max-width: 70rem;
+            margin: 0 auto 3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Innovation Features Specific */
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+            gap: 3rem;
+            margin: 5rem 0;
+        }
+        
+        .innovation-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-normal);
+        }
+        
+        .innovation-card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, rgba(121, 40, 202, 0.1), rgba(255, 0, 128, 0.1));
+        }
+        
+        .innovation-icon {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-secondary);
+        }
+        
+        .innovation-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .innovation-text {
+            font-size: 1.6rem;
+            line-height: 1.7;
+        }
+        
+        /* Stats Section Specific */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin: 5rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-normal);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, rgba(121, 40, 202, 0.1), rgba(255, 0, 128, 0.1));
+        }
+        
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.6rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+        
+        @media (max-width: 992px) {
+            .project-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-rows: repeat(4, 25rem);
+            }
+            
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(2),
+            .gallery-item:nth-child(3),
+            .gallery-item:nth-child(4) {
+                grid-column: span 12;
+                grid-row: span 1;
+            }
+            
+            .progress-timeline {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4rem;
+            }
+            
+            .timeline-point {
+                width: 40%;
+            }
+            
+            .timeline-point::after {
+                display: none;
+            }
+            
+            .progress-timeline::before {
+                display: none;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero-title {
+                font-size: 4.5rem;
+            }
+            
+            .project-subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-point {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .project-hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .project-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-quote {
+                font-size: 2rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="cube">
+                <div class="side front"></div>
+                <div class="side back"></div>
+                <div class="side top"></div>
+                <div class="side bottom"></div>
+                <div class="side left"></div>
+                <div class="side right"></div>
+            </div>
+            <h2 class="loading-text">LOADING<span>...</span></h2>
+        </div>
+    </div>
+
+    <div class="theme-toggle">
+        <div class="toggle-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+    </div>
+
+    <div class="lang-selector">
+        <div class="lang-btn">
+            繁體 <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="lang-dropdown">
+            <ul>
+                <li><a href="#" data-lang="zh-hant">繁體</a></li>
+                <li><a href="#" data-lang="en">EN</a></li>
+                <li><a href="#" data-lang="zh-hans">简体</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="navigation-panel">
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-menu">
+            <div class="nav-brand">
+                <div class="logo">峰盛</div>
+                <div class="logo-text">TOP CHANCE ENGINEERING</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link" data-text="首頁">首頁</a></li>
+                    <li><a href="index.html#services" class="nav-link" data-text="服務項目">服務項目</a></li>
+                    <li><a href="index.html#projects" class="nav-link" data-text="專案">專案</a></li>
+                    <li><a href="index.html#about" class="nav-link" data-text="關於我們">關於我們</a></li>
+                    <li><a href="index.html#contact" class="nav-link" data-text="聯絡我們">聯絡我們</a></li>
+                </ul>
+            </nav>
+            <div class="nav-footer">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="project-hero">
+            <div class="project-hero-content">
+                <h1 class="project-hero-title">新界工業創新園區</h1>
+                <p class="project-subtitle">融合現代工業與環保科技的前沿工業園區</p>
+                <a href="#project-overview" class="btn-primary">了解專案</a>
+            </div>
+        </section>
+
+        <!-- Project Overview Section -->
+        <section id="project-overview" class="project-section light">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">專案概述</h2>
+                    <p class="section-subtitle">工業設施 | 2021年完成</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="project-info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3 class="info-title">專案類型</h3>
+                        <p class="info-text">智能工業園區</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="info-title">位置</h3>
+                        <p class="info-text">香港新界元朗工業區</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="info-title">完成時間</h3>
+                        <p class="info-text">2021年11月</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <h3 class="info-title">總面積</h3>
+                        <p class="info-text">120,000平方米</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <h3 class="info-title">工業單位</h3>
+                        <p class="info-text">60個單位</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3 class="info-title">投資金額</h3>
+                        <p class="info-text">32億港元</p>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <p>
+                        新界工業創新園區是峰盛工程有限公司在工業基礎設施領域的旗艦項目，位於香港新界元朗工業區，總佔地面積達120,000平方米。該項目旨在創建一個集現代工業生產、研發、物流和辦公於一體的綜合性園區，滿足香港本地製造業和技術創新企業的需求。
+                    </p>
+                    <p>
+                        這個工業園區採用了「工業4.0」理念進行設計，配備了先進的智能基礎設施，包括高速光纖網絡、物聯網設備、智能能源管理系統和自動化物流設施。園區內共有60個可靈活配置的工業單位，面積從500平方米到5,000平方米不等，能夠滿足不同類型和規模企業的需求。
+                    </p>
+                    <p>
+                        新界工業創新園區特別注重環保和可持續發展，採用了一系列綠色建築技術，包括屋頂太陽能發電系統、雨水回收利用、智能照明和高效能源管理。這些設計使園區成為香港首個獲得LEED鉑金級和BEAM Plus鉑金級雙認證的工業園區，為香港的工業基礎設施樹立了新標準。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Innovation Features Section -->
+        <section class="project-section dark">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">創新特色</h2>
+                    <p class="section-subtitle">引領香港工業發展的先進設計</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="innovation-grid">
+                    <div class="innovation-card">
+                        <div class="innovation-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="innovation-title">智能製造設施</h3>
+                        <p class="innovation-text">
+                            園區配備了支持智能製造的基礎設施，包括先進的電力和數據系統，滿足高精度製造和自動化生產線的需求，並支持工業物聯網和大數據分析應用。
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <div class="innovation-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <h3 class="innovation-title">可再生能源系統</h3>
+                        <p class="innovation-text">
+                            屋頂安裝了總面積達25,000平方米的太陽能發電系統，年發電量可達250萬千瓦時，滿足園區約30%的電力需求，大幅降低能源成本和碳排放。
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <div class="innovation-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h3 class="innovation-title">循環資源管理</h3>
+                        <p class="innovation-text">
+                            園區實施了綜合循環資源管理系統，包括廢水處理和回用設施、有機廢物堆肥系統和材料回收中心，實現園區資源的最大化利用和最小化浪費。
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <div class="innovation-icon">
+                            <i class="fas fa-truck-loading"></i>
+                        </div>
+                        <h3 class="innovation-title">智能物流系統</h3>
+                        <p class="innovation-text">
+                            園區設計了高效的物流流通系統，包括自動化倉儲設施、智能裝卸平台和電子通關系統，大幅提高貨物處理效率，降低運營成本。
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <div class="innovation-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 class="innovation-title">高速數據網絡</h3>
+                        <p class="innovation-text">
+                            園區部署了千兆光纖網絡和5G移動通信基站，為入駐企業提供高速、穩定的通信服務，支持雲計算、遠程操作和視頻會議等應用。
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <div class="innovation-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="innovation-title">多功能空間</h3>
+                        <p class="innovation-text">
+                            園區設計了靈活的空間配置，可根據企業需求進行定制，包括生產車間、研發實驗室、展示中心和辦公空間，滿足現代工業企業的多元化需求。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="project-section light">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">項目數據</h2>
+                    <p class="section-subtitle">新界工業創新園區的關鍵指標</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">120,000</div>
+                        <div class="stat-label">總建築面積（平方米）</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">60</div>
+                        <div class="stat-label">工業單位數量</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">2,500</div>
+                        <div class="stat-label">就業機會</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">30%</div>
+                        <div class="stat-label">能源自給率</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">50%</div>
+                        <div class="stat-label">水資源循環率</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">75%</div>
+                        <div class="stat-label">廢棄物回收率</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">32</div>
+                        <div class="stat-label">投資金額（億港元）</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">國際環保認證</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Gallery Section -->
+        <section class="project-section dark">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">專案圖集</h2>
+                    <p class="section-subtitle">現代工業園區的視覺展示</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="project-image-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="6eaj8kacmu.jpg" alt="新界工業創新園區航拍" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="gzbk84jgnq.jpg" alt="園區生產車間" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="3j8u55r3j8.jpg" alt="太陽能光伏系統" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="6eaj8kacmu.jpg" alt="智能物流中心" class="gallery-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Progress Section -->
+        <section class="project-section light">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">專案進程</h2>
+                    <p class="section-subtitle">從構思到完成的時間線</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-timeline">
+                        <div class="timeline-point completed">
+                            <div class="point-marker"></div>
+                            <div class="point-date">2018年10月</div>
+                            <div class="point-title">專案啟動</div>
+                            <div class="point-description">土地收購和規劃設計階段</div>
+                        </div>
+
+                        <div class="timeline-point completed">
+                            <div class="point-marker"></div>
+                            <div class="point-date">2019年5月</div>
+                            <div class="point-title">設計完成</div>
+                            <div class="point-description">綜合設計方案獲得批准</div>
+                        </div>
+
+                        <div class="timeline-point completed">
+                            <div class="point-marker"></div>
+                            <div class="point-date">2019年8月</div>
+                            <div class="point-title">基礎工程</div>
+                            <div class="point-description">場地平整和基礎設施施工</div>
+                        </div>
+
+                        <div class="timeline-point completed">
+                            <div class="point-marker"></div>
+                            <div class="point-date">2021年3月</div>
+                            <div class="point-title">建築完工</div>
+                            <div class="point-description">主體建築和設施完成</div>
+                        </div>
+
+                        <div class="timeline-point completed">
+                            <div class="point-marker"></div>
+                            <div class="point-date">2021年11月</div>
+                            <div class="point-title">正式啟用</div>
+                            <div class="point-description">園區完成驗收並正式開業</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Solutions Section -->
+        <section class="project-section dark">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">挑戰與解決方案</h2>
+                    <p class="section-subtitle">我們如何克服項目中的技術難題</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="challenge-section">
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3 class="challenge-title">大規模土地整治</h3>
+                            <p class="challenge-text">
+                                項目場地原為舊工業區，土壤和地下水存在污染問題，需要進行大規模的環境整治工作，同時考慮到成本控制和施工進度。
+                            </p>
+                            <h4 class="solution-title">解決方案</h4>
+                            <p class="solution-text">
+                                採用了創新的原位土壤修復技術，結合物理、化學和生物修復方法，大幅降低了傳統挖掘和填埋方法的成本，並縮短了處理時間，使得環境整治工作在9個月內完成。
+                            </p>
+                        </div>
+
+                        <div class="challenge-card">
+                            <h3 class="challenge-title">可持續能源系統整合</h3>
+                            <p class="challenge-text">
+                                園區目標是實現30%的能源自給率，需要整合大規模太陽能系統、蓄能設施和智能電網，同時確保系統的穩定性和經濟性。
+                            </p>
+                            <h4 class="solution-title">解決方案</h4>
+                            <p class="solution-text">
+                                開發了一套創新的能源管理系統，結合AI預測算法和微電網技術，優化太陽能發電與儲能系統的協同運行，提高了能源利用效率，並實現了與公共電網的智能互動。
+                            </p>
+                        </div>
+
+                        <div class="challenge-card">
+                            <h3 class="challenge-title">彈性空間設計</h3>
+                            <p class="challenge-text">
+                                需要設計能適應不同類型企業需求的多功能工業空間，同時考慮未來潛在的用途變化，確保園區的長期競爭力。
+                            </p>
+                            <h4 class="solution-title">解決方案</h4>
+                            <p class="solution-text">
+                                採用了創新的模塊化設計理念，開發了具有高度靈活性的空間系統，包括可移動隔牆、懸掛式模塊化辦公區和可重新配置的生產區域，使空間能夠快速適應不同企業的需求變化。
+                            </p>
+                        </div>
+
+                        <div class="challenge-card">
+                            <h3 class="challenge-title">綠色建築技術應用</h3>
+                            <p class="challenge-text">
+                                在工業建築中應用先進的綠色建築技術面臨成本效益和技術可行性的挑戰，特別是在兼顧工業生產需求的情況下。
+                            </p>
+                            <h4 class="solution-title">解決方案</h4>
+                            <p class="solution-text">
+                                開發了一套專為工業建築定制的綠色建築解決方案，重點關注能源效率、室內環境質量和資源循環利用，通過精細的成本效益分析和系統化設計，成功實現了環保目標，並獲得了LEED和BEAM Plus雙認證。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="testimonial-section">
+            <div class="testimonial-content">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-quote">
+                    峰盛工程在新界工業創新園區的設計和建造中展現了卓越的專業能力和前瞻性思維。他們不僅理解當代工業的需求，還成功整合了智能技術和可持續發展理念，創造了一個真正面向未來的工業空間。作為香港製造業的代表，我們對這個能夠提升香港工業競爭力的項目感到非常滿意。
+                </p>
+                <div class="testimonial-author">陳大衛博士</div>
+                <div class="testimonial-position">香港工業總會副主席</div>
+            </div>
+        </section>
+
+        <!-- Related Projects Section -->
+        <section class="project-section light">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">相關專案</h2>
+                    <p class="section-subtitle">探索更多我們的建築作品</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="related-projects">
+                    <div class="related-grid">
+                        <div class="related-item">
+                            <img src="gzbk84jgnq.jpg" alt="香港中環商業中心" class="related-image">
+                            <div class="related-overlay">
+                                <h3 class="related-title">香港中環商業中心</h3>
+                                <p class="related-category">商業建築 | 2023年完成</p>
+                                <a href="hongkong-commercial.html" class="related-link">查看詳情</a>
+                            </div>
+                        </div>
+
+                        <div class="related-item">
+                            <img src="3j8u55r3j8.jpg" alt="九龍灣住宅綜合體" class="related-image">
+                            <div class="related-overlay">
+                                <h3 class="related-title">九龍灣住宅綜合體</h3>
+                                <p class="related-category">住宅項目 | 2022年完成</p>
+                                <a href="kowloon-residential.html" class="related-link">查看詳情</a>
+                            </div>
+                        </div>
+
+                        <div class="related-item">
+                            <img src="6eaj8kacmu.jpg" alt="沙田數據中心" class="related-image">
+                            <div class="related-overlay">
+                                <h3 class="related-title">沙田數據中心</h3>
+                                <p class="related-category">技術設施 | 2020年完成</p>
+                                <a href="#" class="related-link">查看詳情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section dark">
+            <div class="project-container">
+                <h2 class="cta-title">想要打造創新工業設施？</h2>
+                <p class="cta-text">
+                    峰盛工程有限公司擁有豐富的工業建築經驗，我們的專業團隊能為您提供從設計到施工的完整解決方案，打造智能、高效、可持續的現代工業設施。
+                </p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="btn-primary">聯絡我們</a>
+                    <a href="index.html#services" class="btn-secondary">了解服務</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="logo">峰盛</div>
+                    <p>建築創新 • 工程卓越</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>快速鏈接</h3>
+                    <ul>
+                        <li><a href="index.html">首頁</a></li>
+                        <li><a href="index.html#services">服務項目</a></li>
+                        <li><a href="index.html#projects">專案</a></li>
+                        <li><a href="index.html#about">關於我們</a></li>
+                        <li><a href="index.html#contact">聯絡我們</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>服務</h3>
+                    <ul>
+                        <li><a href="#">建築工程</a></li>
+                        <li><a href="#">結構工程</a></li>
+                        <li><a href="#">幕牆工程</a></li>
+                        <li><a href="#">裝修工程</a></li>
+                        <li><a href="#">工程設計</a></li>
+                        <li><a href="#">項目管理</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>訂閱最新資訊</h3>
+                    <p>獲取我們的行業洞察和公司動態</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="您的電子郵件">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 峰盛工程有限公司 版權所有 | All Rights Reserved</p>
+                <div class="footer-legal">
+                    <a href="#">隱私政策</a>
+                    <a href="#">條款和條件</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.preloader').classList.add('hide');
+            }, 1500);
+        });
+
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const toggleIcon = document.querySelector('.toggle-icon i');
+        
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            toggleIcon.classList.toggle('fa-moon');
+            toggleIcon.classList.toggle('fa-sun');
+        });
+
+        // Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
+        });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(function() {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.info-card, .innovation-card, .stat-item, .gallery-item, .challenge-card, .related-item');
+            
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                if (rect.top <= windowHeight * 0.85) {
+                    el.classList.add('aos-animate');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Add data-aos attributes to elements
+        document.querySelectorAll('.info-card, .innovation-card, .stat-item').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-delay', (index * 100) % 500);
+        });
+        
+        document.querySelectorAll('.gallery-item').forEach((el, index) => {
+            el.setAttribute('data-aos', 'zoom-in');
+            el.setAttribute('data-aos-delay', (index * 100) % 500);
+        });
+        
+        document.querySelectorAll('.challenge-card').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-delay', (index * 100) % 500);
+        });
+        
+        document.querySelectorAll('.related-item').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-delay', (index * 100) % 500);
+        });
+
+        // Language selector
+        const langBtn = document.querySelector('.lang-btn');
+        const langDropdown = document.querySelector('.lang-dropdown');
+        
+        langBtn.addEventListener('click', function() {
+            langBtn.classList.toggle('active');
+            langDropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                langBtn.classList.remove('active');
+                langDropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

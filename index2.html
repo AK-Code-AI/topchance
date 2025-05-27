@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D 建築展示</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>3D 建築展示</h1>
+    <div class="scene">
+      <div class="building">
+        <div class="face front">前面</div>
+        <div class="face back">後面</div>
+        <div class="face right">右側</div>
+        <div class="face left">左側</div>
+        <div class="face top">頂部</div>
+        <div class="face bottom">底部</div>
+      </div>
+    </div>
+    <div class="info-panel">
+      <div>建築名稱：峰盛大廈</div>
+      <div>位置：香港九龍旺角</div>
+      <div>高度：100米</div>
+      <div>建造年份：2023年</div>
+    </div>
+  </div>
+<style>
+body, html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #0f1c2e;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.scene {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  margin-bottom: 40px;
+}
+
+.building {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(15deg) rotateY(35deg);
+  animation: rotate 20s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  background: linear-gradient(to bottom, #3498db, #2980b9);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 10px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front  { transform: translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(150px); height: 200px; }
+.bottom { transform: rotateX(-90deg) translateZ(0px); height: 200px; }
+
+@keyframes rotate {
+  0% { transform: rotateX(15deg) rotateY(0deg); }
+  100% { transform: rotateX(15deg) rotateY(360deg); }
+}
+
+.info-panel {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.info-panel > div {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+</div>
+</body>
+</html>
