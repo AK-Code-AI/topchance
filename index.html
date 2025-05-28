@@ -10,9 +10,6 @@
     <script src="js/lang.js" defer></script>
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
     <!-- Preloader -->
     <div class="preloader">
         <div class="preloader-inner">
@@ -33,20 +30,6 @@
             <i class="fas fa-moon"></i>
         </div>
     </div>
-
-    <div class="lang-selector">
-        <div class="lang-btn">
-            繁體 <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="lang-dropdown">
-            <ul>
-                <li><a href="#" data-lang="zh-hant">繁體</a></li>
-                <li><a href="#" data-lang="en">EN</a></li>
-                <li><a href="#" data-lang="zh-hans">简体</a></li>
-            </ul>
-        </div>
-    </div>
-
     <div class="navigation-panel">
         <div class="nav-toggle">
             <span></span>
@@ -82,7 +65,10 @@
         <section id="home" class="hero-section">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="split-text">峰盛工程有限公司</h1>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <img src="4wrgzkuvh3.png" alt="峰盛工程有限公司" style="height: 50px; margin-right: 15px;">
+                        <h1 class="split-text">峰盛工程有限公司</h1>
+                    </div>
                     <div class="hero-subtitle">
                         <div class="subtitle-line"></div>
                         <p>建築創新 • 工程卓越</p>
@@ -249,18 +235,18 @@
                                 <div class="project-details">
                                     <h3>香港-港島區商業中心</h3>
                                     <p>甲級商業大廈裝修 | 2025年完成</p>
-                                    <a href="hongkong-commercial.html" class="project-link">查看詳情</a>
+                                    <a href="HK-Commercial.html" class="project-link">查看詳情</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="project-item residential">
                         <div class="project-image">
                             <img src="images/KCH2.jpg" alt="政府工程項目">
                             <div class="project-overlay">
                                 <div class="project-details">
-                                    <h3>葵涌医院的第二期重建工程</h3>
+                                    <h3>葵涌醫院第二期重建工程</h3>
                                     <p>政府工程項目 | 2024年完成</p>
                                     <a href="KCH2.html" class="project-link">查看詳情</a>
                                 </div>
@@ -273,9 +259,22 @@
                             <img src="images/PU2.jpeg" alt="大學設施">
                             <div class="project-overlay">
                                 <div class="project-details">
-                                    <h3>香港理工大學</h3>
-                                    <p>大學設施工程 | 2025年-未完成</p>
+                                    <h3>香港理工大學鋁板更換項目</h3>
+                                    <p>大學設施工程 | 2025年進行中</p>
                                     <a href="cbd.html" class="project-link">查看詳情</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item commercial">
+                        <div class="project-image">
+                            <img src="images/Kuto.jpeg" alt="外牆系統項目">
+                            <div class="project-overlay">
+                                <div class="project-details">
+                                    <h3>上水古洞工程項目</h3>
+                                    <p>外牆系統項目 | 2020年完成</p>
+                                    <a href="hongkong-commercial.html" class="project-link">查看詳情</a>
                                 </div>
                             </div>
                         </div>
@@ -287,8 +286,8 @@
                             <div class="project-overlay">
                                 <div class="project-details">
                                     <h3>香港國際機場三跑系統</h3>
-                                    <p>三跑系統 | 2023年-未完成</p>
-                                    <a href="newterritories-industrial.html" class="project-link">查看詳情</a>
+                                    <p>機場設施工程 | 2023年進行中</p>
+                                    <a href="Airport.html" class="project-link">查看詳情</a>
                                 </div>
                             </div>
                         </div>
@@ -348,10 +347,10 @@
                 <div class="slider-container">
                     <div class="testimonial-card active">
                         <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p class="testimonial-text">峰盛工程有限公司的專業服務讓我們的項目順利完成，感謝他們的努力！他們對細節的關注和解決問題的能力令人印象深刻。</p>
+                        <p class="testimonial-text">峰盛工程有限公司的專業服務讓我們的項目順利完成，感謝他們的努力！他們對細節上的關注和解決問題的能力令人印象深刻。</p>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <h4>王先生</h4>
+                                <h4>王總裁</h4>
                                 <p>商業大廈開發商</p>
                             </div>
                         </div>
@@ -359,21 +358,21 @@
                     
                     <div class="testimonial-card">
                         <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p class="testimonial-text">他們的團隊非常專業，提供了高品質的工程設計和施工服務。整個過程中的溝通順暢，讓我們對項目進度充滿信心。</p>
+                        <p class="testimonial-text">TopChance 的工程團隊非常專業，並提供了高品質的工程設計和施工服務。整個過程中的溝通很順暢，讓我們對項目的進度充滿信心。</p>
                         <div class="testimonial-author">
                             <div class="author-info">
                                 <h4>陳小姐</h4>
-                                <p>住宅開發項目經理</p>
+                                <p>項目開發部經理</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="testimonial-card">
                         <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p class="testimonial-text">從規劃到完工，整個過程都很順暢，我們對最終結果非常滿意。峰盛的創新思維和解決方案幫助我們克服了多個技術挑戰。</p>
+                        <p class="testimonial-text">從規劃到完工，整個過程都一絲不苟，我們亦對最終結果非常滿意。峰盛的創新思維和各種解決方案都幫助我們克服了多個技術挑戰。</p>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <h4>李總監</h4>
+                                <h4>霍總監</h4>
                                 <p>機場項目管理</p>
                             </div>
                         </div>
@@ -422,7 +421,7 @@
                             <textarea id="message" rows="5" required></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-btn">發送訊息</button>
+                        <a href="https://wa.me/qr/5HY3JA5STSPKE1" target="_blank" class="submit-btn" style="display: inline-block; text-align: center; text-decoration: none;">發送訊息</a>
                     </form>
                 </div>
                 
@@ -484,7 +483,7 @@
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-logo">
-                    <div class="logo">峰盛</div>
+                    <div class="logo">峰盛工程有限公司</div>
                     <p>建築創新 • 工程卓越</p>
                 </div>
                 

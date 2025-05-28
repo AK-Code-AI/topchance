@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>香港中環商業中心 - 峰盛工程有限公司</title>
+    <title>上水古洞工程項目 - 峰盛工程有限公司</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/lang.js" defer></script>
     <style>
-        /* Project Detail Page Specific Styles */
+        /* Project Page Specific Styles */
         .project-hero {
             height: 100vh;
             position: relative;
@@ -17,7 +17,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('gzbk84jgnq.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/Kuto.jpeg');
             background-size: cover;
             background-position: center;
         }
@@ -66,420 +66,239 @@
             margin: 0 auto;
         }
         
-        .project-info-grid {
+        .overview-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 5rem 0;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-top: 5rem;
         }
         
-        .info-card {
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+        
+        .stat-card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: var(--radius-lg);
             text-align: center;
-            box-shadow: var(--shadow-md);
             border: 1px solid var(--color-border);
-            transition: all var(--transition-normal);
         }
         
-        .info-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .info-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-secondary);
-        }
-        
-        .info-title {
+        .stat-number {
             font-family: var(--font-heading);
-            font-size: 1.8rem;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--color-secondary);
             margin-bottom: 1rem;
         }
         
-        .info-text {
+        .stat-label {
             font-size: 1.6rem;
+            color: var(--color-text-muted);
         }
         
-        .project-description {
-            margin: 5rem 0;
-        }
-        
-        .project-description p {
-            font-size: 1.7rem;
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-        }
-        
-        .project-image-gallery {
-            margin: 5rem 0;
-        }
-        
-        .gallery-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: repeat(2, 30rem);
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            transition: transform var(--transition-normal);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            color: var(--color-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .feature-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-description {
+            font-size: 1.6rem;
+            line-height: 1.6;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
         }
         
         .gallery-item {
-            overflow: hidden;
-            border-radius: var(--radius-md);
             position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 25rem;
         }
         
-        .gallery-item:nth-child(1) {
-            grid-column: span 8;
-            grid-row: span 1;
-        }
-        
-        .gallery-item:nth-child(2) {
-            grid-column: span 4;
-            grid-row: span 1;
-        }
-        
-        .gallery-item:nth-child(3) {
-            grid-column: span 4;
-            grid-row: span 1;
-        }
-        
-        .gallery-item:nth-child(4) {
-            grid-column: span 8;
-            grid-row: span 1;
-        }
-        
-        .gallery-image {
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform var(--transition-slow);
         }
         
-        .gallery-item:hover .gallery-image {
+        .gallery-item:hover img {
             transform: scale(1.1);
         }
         
-        .progress-section {
-            margin: 5rem 0;
-        }
-        
-        .progress-timeline {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 4rem;
-            position: relative;
-        }
-        
-        .progress-timeline::before {
-            content: "";
+        .gallery-overlay {
             position: absolute;
-            top: 3.5rem;
+            bottom: 0;
             left: 0;
-            width: 100%;
-            height: 0.2rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            z-index: 1;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem;
+            color: white;
         }
         
-        .timeline-point {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-            width: 20%;
+        .timeline-section {
+            padding: 5rem 0;
         }
         
-        .point-marker {
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            margin-bottom: 1.5rem;
-            position: relative;
-            top: 2.5rem;
-        }
-        
-        .point-date {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+        .timeline-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+            gap: 3rem;
             margin-top: 3rem;
         }
         
-        .point-title {
-            font-family: var(--font-heading);
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
+        .timeline-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
             text-align: center;
         }
         
-        .point-description {
-            font-size: 1.4rem;
-            text-align: center;
-            color: var(--color-text-muted);
+        .timeline-date {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
         }
         
-        .timeline-point.completed .point-marker {
-            background: var(--gradient-secondary);
-        }
-        
-        .timeline-point.completed::after {
-            content: "";
-            position: absolute;
-            top: 3.5rem;
-            left: 0;
-            width: 100%;
-            height: 0.2rem;
-            background: var(--gradient-secondary);
-            z-index: 1;
-        }
-        
-        .timeline-point:first-child::after {
-            width: 50%;
-            left: 50%;
-        }
-        
-        .timeline-point:last-child::after {
-            width: 0;
-        }
-        
-        .challenge-section {
-            margin: 5rem 0;
+        .timeline-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
         
         .challenges-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-top: 5rem;
         }
         
-        .challenge-card {
+        .challenge-item {
             background: rgba(255, 255, 255, 0.05);
-            padding: 3rem;
+            padding: 4rem;
             border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
             border: 1px solid var(--color-border);
-            transition: all var(--transition-normal);
-        }
-        
-        .challenge-card:hover {
-            transform: translateY(-10px);
         }
         
         .challenge-title {
             font-family: var(--font-heading);
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-secondary);
-        }
-        
-        .challenge-text {
-            font-size: 1.6rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-        
-        .solution-title {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--color-accent);
-        }
-        
-        .solution-text {
-            font-size: 1.6rem;
-            line-height: 1.7;
-        }
-        
-        .testimonial-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('6eaj8kacmu.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 8rem 5%;
-            text-align: center;
-        }
-        
-        .testimonial-content {
-            max-width: 80rem;
-            margin: 0 auto;
-        }
-        
-        .testimonial-quote {
             font-size: 2.4rem;
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 3rem;
-        }
-        
-        .testimonial-author {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-        
-        .testimonial-position {
-            font-size: 1.6rem;
+            margin-bottom: 2rem;
             color: var(--color-secondary);
-            margin-top: 0.5rem;
         }
         
         .related-projects {
-            margin: 5rem 0;
-        }
-        
-        .related-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
             gap: 3rem;
-            margin-top: 4rem;
+            margin-top: 5rem;
         }
         
-        .related-item {
-            position: relative;
+        .related-card {
+            background: rgba(255, 255, 255, 0.05);
             border-radius: var(--radius-lg);
             overflow: hidden;
-            height: 35rem;
+            border: 1px solid var(--color-border);
+            transition: transform var(--transition-normal);
+        }
+        
+        .related-card:hover {
+            transform: translateY(-10px);
         }
         
         .related-image {
+            height: 20rem;
+            overflow: hidden;
+        }
+        
+        .related-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform var(--transition-slow);
         }
         
-        .related-item:hover .related-image {
-            transform: scale(1.1);
-        }
-        
-        .related-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+        .related-content {
             padding: 2rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            color: var(--color-text-light);
-            transition: all var(--transition-normal);
         }
         
         .related-title {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--color-secondary);
         }
         
-        .related-category {
+        .related-description {
             font-size: 1.4rem;
-            color: var(--color-secondary);
             margin-bottom: 1.5rem;
+            color: var(--color-text-muted);
         }
         
         .related-link {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--color-secondary);
-            color: var(--color-text-light);
-            font-size: 1.4rem;
-            border-radius: var(--radius-sm);
-            transition: all var(--transition-normal);
+            color: var(--color-secondary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color var(--transition-normal);
         }
         
         .related-link:hover {
-            background-color: var(--color-primary);
-            transform: translateY(-3px);
-        }
-        
-        .cta-section {
-            text-align: center;
-            padding: 8rem 5%;
-        }
-        
-        .cta-title {
-            font-family: var(--font-heading);
-            font-size: 4rem;
-            margin-bottom: 2rem;
-        }
-        
-        .cta-text {
-            font-size: 1.8rem;
-            max-width: 70rem;
-            margin: 0 auto 3rem;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+            color: var(--color-primary);
         }
         
         @media (max-width: 992px) {
-            .project-info-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .overview-grid,
+            .challenges-grid {
+                grid-template-columns: 1fr;
             }
             
-            .gallery-grid {
-                grid-template-rows: repeat(4, 25rem);
-            }
-            
-            .gallery-item:nth-child(1),
-            .gallery-item:nth-child(2),
-            .gallery-item:nth-child(3),
-            .gallery-item:nth-child(4) {
-                grid-column: span 12;
-                grid-row: span 1;
-            }
-            
-            .progress-timeline {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 4rem;
-            }
-            
-            .timeline-point {
-                width: 40%;
-            }
-            
-            .timeline-point::after {
-                display: none;
-            }
-            
-            .progress-timeline::before {
-                display: none;
+            .project-stats {
+                grid-template-columns: 1fr;
             }
         }
         
         @media (max-width: 768px) {
             .project-hero-title {
-                font-size: 4.5rem;
+                font-size: 4rem;
             }
             
             .project-subtitle {
                 font-size: 1.8rem;
-            }
-            
-            .timeline-point {
-                width: 100%;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .project-hero-title {
-                font-size: 3.5rem;
-            }
-            
-            .project-info-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .testimonial-quote {
-                font-size: 2rem;
             }
         }
     </style>
@@ -557,9 +376,9 @@
         <!-- Hero Section -->
         <section class="project-hero">
             <div class="project-hero-content">
-                <h1 class="project-hero-title">香港中環商業中心</h1>
-                <p class="project-subtitle">為國際金融中心打造現代化商業空間</p>
-                <a href="#project-overview" class="btn-primary">了解專案</a>
+                <h1 class="project-hero-title">上水古洞工程項目</h1>
+                <p class="project-subtitle">先進外牆系統 - 鋁板與玻璃幕牆工程</p>
+                <a href="#project-overview" class="btn-primary">了解詳情</a>
             </div>
         </section>
 
@@ -568,154 +387,177 @@
             <div class="project-container">
                 <div class="section-intro">
                     <h2 class="section-title">專案概述</h2>
-                    <p class="section-subtitle">商業建築 | 2023年完成</p>
+                    <p class="section-subtitle">外牆系統項目 | 2020年完成</p>
                     <div class="section-divider"></div>
                 </div>
 
-                <div class="project-info-grid">
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3 class="info-title">專案類型</h3>
-                        <p class="info-text">商業辦公大樓</p>
+                <div class="overview-grid">
+                    <div>
+                        <p style="font-size: 1.7rem; margin-bottom: 2rem; line-height: 1.7;">
+                            上水古洞工程項目是峰盛工程有限公司承接的一項大型外牆系統工程，包括鋁板外牆和玻璃幕牆的設計、製造和安裝。該項目位於香港新界上水古洞地區，為當地的新發展建築群提供了現代化、高效能的外牆解決方案。
+                        </p>
+                        <p style="font-size: 1.7rem; margin-bottom: 2rem; line-height: 1.7;">
+                            我們為該項目設計和安裝了總面積達22,500平方米的外牆系統，採用高質量的鋁合金板材和雙層節能玻璃，確保建築物具有出色的隔熱、隔音性能，同時保持優雅的現代外觀。
+                        </p>
+                        <p style="font-size: 1.7rem; line-height: 1.7;">
+                            該項目的一大特色是成功整合了傳統鋁板系統與現代玻璃幕牆技術，在保證建築物外觀統一性的同時，為不同功能區域提供了最適合的外牆解決方案。
+                        </p>
                     </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 class="info-title">位置</h3>
-                        <p class="info-text">香港中環金融街21號</p>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <h3 class="info-title">完成時間</h3>
-                        <p class="info-text">2023年2月</p>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-chart-area"></i>
-                        </div>
-                        <h3 class="info-title">建築面積</h3>
-                        <p class="info-text">45,000平方米</p>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-hard-hat"></i>
-                        </div>
-                        <h3 class="info-title">工作範圍</h3>
-                        <p class="info-text">設計、結構工程、施工管理</p>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-hand-holding-usd"></i>
-                        </div>
-                        <h3 class="info-title">投資金額</h3>
-                        <p class="info-text">18億港元</p>
+                    <div>
+                        <img src="images/Kuto.jpeg" alt="上水古洞項目" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
                     </div>
                 </div>
 
-                <div class="project-description">
-                    <p>
-                        香港中環商業中心是一座位於香港金融區核心地帶的現代化辦公大樓，由峰盛工程有限公司負責設計和建造。這座大樓共38層，總建築面積達45,000平方米，是我們公司近年來完成的最具代表性的商業建築項目之一。
-                    </p>
-                    <p>
-                        作為一座5A級智能辦公大樓，香港中環商業中心採用了多項先進技術和可持續發展理念，包括智能樓宇管理系統、雨水回收系統、高效能源管理系統以及綠色建築材料。大樓的設計融合了現代美學與實用功能，既滿足了國際企業對高端辦公空間的需求，也為香港中環天際線增添了一處亮麗的風景。
-                    </p>
-                    <p>
-                        該項目從設計到完工歷時3年，期間克服了場地限制、交通繁忙和天氣多變等挑戰。通過團隊的專業技術和精心規劃，我們成功地按期交付了這一重要項目，並達到了客戶的高標準要求，獲得了2023年香港建築師學會優秀商業建築獎。
-                    </p>
+                <div class="project-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">22,500</div>
+                        <div class="stat-label">平方米外牆面積</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">個月工期</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">35</div>
+                        <div class="stat-label">專業技術人員</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">環保材料使用率</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Project Gallery Section -->
+        <!-- Features Section -->
         <section class="project-section dark">
             <div class="project-container">
                 <div class="section-intro">
-                    <h2 class="section-title">專案圖集</h2>
-                    <p class="section-subtitle">現代化商業建築的視覺展示</p>
+                    <h2 class="section-title">系統特點</h2>
+                    <p class="section-subtitle">先進外牆系統的技術優勢</p>
                     <div class="section-divider"></div>
                 </div>
 
-                <div class="project-image-gallery">
-                    <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <img src="gzbk84jgnq.jpg" alt="香港中環商業中心外觀" class="gallery-image">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <div class="gallery-item">
-                            <img src="3j8u55r3j8.jpg" alt="商業中心入口大堂" class="gallery-image">
+                        <h3 class="feature-title">耐候性能</h3>
+                        <p class="feature-description">
+                            採用氟碳塗層鋁板，耐候性達20年以上，能抵抗香港惡劣的氣候條件，包括強風、暴雨和高紫外線。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
                         </div>
-                        <div class="gallery-item">
-                            <img src="6eaj8kacmu.jpg" alt="頂層行政辦公室" class="gallery-image">
+                        <h3 class="feature-title">環保節能</h3>
+                        <p class="feature-description">
+                            雙層Low-E玻璃與鋁板系統共同提供優異的隔熱性能，降低建築能耗30%以上，獲得綠建環評認證。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
                         </div>
-                        <div class="gallery-item">
-                            <img src="gzbk84jgnq.jpg" alt="中心空中花園" class="gallery-image">
+                        <h3 class="feature-title">防水防滲</h3>
+                        <p class="feature-description">
+                            創新的多層防水設計和特殊接縫處理，確保系統在極端天氣條件下仍保持優異的防水性能。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
                         </div>
+                        <h3 class="feature-title">維護便捷</h3>
+                        <p class="feature-description">
+                            模塊化設計使維護和更換變得簡單高效，可單獨更換損壞部件而不影響整體系統。
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Project Progress Section -->
+        <!-- Gallery Section -->
         <section class="project-section light">
             <div class="project-container">
                 <div class="section-intro">
-                    <h2 class="section-title">專案進程</h2>
-                    <p class="section-subtitle">從構思到完成的時間線</p>
+                    <h2 class="section-title">專案圖集</h2>
+                    <p class="section-subtitle">外牆系統工程的視覺展示</p>
                     <div class="section-divider"></div>
                 </div>
 
-                <div class="progress-section">
-                    <div class="progress-timeline">
-                        <div class="timeline-point completed">
-                            <div class="point-marker"></div>
-                            <div class="point-date">2020年3月</div>
-                            <div class="point-title">專案啟動</div>
-                            <div class="point-description">設計競標和初步規劃階段</div>
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="images/Kuto.jpeg" alt="上水古洞項目外觀">
+                        <div class="gallery-overlay">
+                            <h3>建築外觀</h3>
+                            <p>完工後的外牆系統</p>
                         </div>
-
-                        <div class="timeline-point completed">
-                            <div class="point-marker"></div>
-                            <div class="point-date">2020年9月</div>
-                            <div class="point-title">設計完成</div>
-                            <div class="point-description">建築設計和結構方案確定</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="3j8u55r3j8.jpg" alt="鋁板細節">
+                        <div class="gallery-overlay">
+                            <h3>鋁板細節</h3>
+                            <p>高品質外牆材料</p>
                         </div>
-
-                        <div class="timeline-point completed">
-                            <div class="point-marker"></div>
-                            <div class="point-date">2021年1月</div>
-                            <div class="point-title">基礎工程</div>
-                            <div class="point-description">地基和基礎結構施工</div>
-                        </div>
-
-                        <div class="timeline-point completed">
-                            <div class="point-marker"></div>
-                            <div class="point-date">2022年5月</div>
-                            <div class="point-title">主體完工</div>
-                            <div class="point-description">建築主體和外立面完成</div>
-                        </div>
-
-                        <div class="timeline-point completed">
-                            <div class="point-marker"></div>
-                            <div class="point-date">2023年2月</div>
-                            <div class="point-title">項目交付</div>
-                            <div class="point-description">室內裝修和系統調試完成</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="6eaj8kacmu.jpg" alt="安裝過程">
+                        <div class="gallery-overlay">
+                            <h3>安裝過程</h3>
+                            <p>專業團隊施工</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Challenges & Solutions Section -->
+        <!-- Timeline Section -->
         <section class="project-section dark">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">專案進程</h2>
+                    <p class="section-subtitle">從設計到完成的時間線</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="timeline-items">
+                    <div class="timeline-card">
+                        <div class="timeline-date">2019年5月</div>
+                        <h3 class="timeline-title">設計階段</h3>
+                        <p>完成外牆系統設計和工程計劃</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2019年8月</div>
+                        <h3 class="timeline-title">材料採購</h3>
+                        <p>完成鋁板和玻璃材料採購與品控</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2019年10月</div>
+                        <h3 class="timeline-title">製造階段</h3>
+                        <p>開始鋁板加工和單元製造</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2020年2月</div>
+                        <h3 class="timeline-title">安裝開始</h3>
+                        <p>現場安裝工作啟動</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2020年11月</div>
+                        <h3 class="timeline-title">項目完成</h3>
+                        <p>全部安裝完成並通過檢驗</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges Section -->
+        <section class="project-section light">
             <div class="project-container">
                 <div class="section-intro">
                     <h2 class="section-title">挑戰與解決方案</h2>
@@ -723,120 +565,72 @@
                     <div class="section-divider"></div>
                 </div>
 
-                <div class="challenge-section">
-                    <div class="challenges-grid">
-                        <div class="challenge-card">
-                            <h3 class="challenge-title">有限的建築空間</h3>
-                            <p class="challenge-text">
-                                在香港中環繁忙的金融區，可用建築空間極為有限。該項目位於兩座現有建築物之間，施工場地狹小，物流和設備放置面臨極大挑戰。
-                            </p>
-                            <h4 class="solution-title">解決方案</h4>
-                            <p class="solution-text">
-                                我們採用了模塊化建築方法，許多建築部件在工廠預製後運至現場安裝，並實施了精確的施工時間表，最大限度地減少了對周圍環境的影響。
-                            </p>
-                        </div>
+                <div class="challenges-grid">
+                    <div class="challenge-item">
+                        <h3 class="challenge-title">複雜的幾何外形</h3>
+                        <p style="font-size: 1.6rem; line-height: 1.6; margin-bottom: 2rem;">
+                            <strong>挑戰：</strong>建築外立面設計包含多種曲面和不規則形狀，對鋁板製造和安裝提出了極高要求。
+                        </p>
+                        <p style="font-size: 1.6rem; line-height: 1.6;">
+                            <strong>解決方案：</strong>採用3D數字建模技術精確設計每塊面板，並使用CNC數控加工設備確保複雜幾何形狀的製造精度達到±1毫米。
+                        </p>
+                    </div>
 
-                        <div class="challenge-card">
-                            <h3 class="challenge-title">地質條件複雜</h3>
-                            <p class="challenge-text">
-                                項目地點地質條件複雜，地下水位高，為基礎工程帶來了挑戰。傳統地基方法在此環境下風險較高。
-                            </p>
-                            <h4 class="solution-title">解決方案</h4>
-                            <p class="solution-text">
-                                我們實施了先進的地下連續牆技術，並使用了特殊的止水工藝，成功解決了地下水滲透問題，保證了基礎工程的穩固性和安全性。
-                            </p>
-                        </div>
-
-                        <div class="challenge-card">
-                            <h3 class="challenge-title">嚴格的環保要求</h3>
-                            <p class="challenge-text">
-                                香港對新建商業建築有嚴格的環保標準，包括能源效率、碳排放和可持續材料使用等方面。
-                            </p>
-                            <h4 class="solution-title">解決方案</h4>
-                            <p class="solution-text">
-                                我們整合了多項綠色建築技術，包括高效能源管理系統、雙層玻璃外牆、太陽能發電板和雨水回收系統，使大樓達到香港綠建環評(BEAM Plus)鉑金級認證。
-                            </p>
-                        </div>
-
-                        <div class="challenge-card">
-                            <h3 class="challenge-title">抗風抗震設計</h3>
-                            <p class="challenge-text">
-                                作為高層建築，大樓需要抵抗香港地區的台風和可能的地震活動，對結構穩定性提出了高要求。
-                            </p>
-                            <h4 class="solution-title">解決方案</h4>
-                            <p class="solution-text">
-                                我們設計了創新的核心筒結構系統，並在建築頂部安裝了調諧質量阻尼器(TMD)，有效提高了大樓的抗風抗震性能，確保在極端天氣條件下的安全。
-                            </p>
-                        </div>
+                    <div class="challenge-item">
+                        <h3 class="challenge-title">嚴格的防風要求</h3>
+                        <p style="font-size: 1.6rem; line-height: 1.6; margin-bottom: 2rem;">
+                            <strong>挑戰：</strong>香港位於台風帶，建築外牆系統需要抵抗高達200km/h的風速，對固定系統提出了嚴峻挑戰。
+                        </p>
+                        <p style="font-size: 1.6rem; line-height: 1.6;">
+                            <strong>解決方案：</strong>設計了創新的多點固定系統和特殊的風壓分散結構，通過風洞測試驗證，系統能夠承受超過17級颱風風壓。
+                        </p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Testimonial Section -->
-        <section class="testimonial-section">
-            <div class="testimonial-content">
-                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                <p class="testimonial-quote">
-                    峰盛工程團隊在香港中環商業中心項目中展現了卓越的專業能力和創新思維。他們不僅按時完成了項目，而且解決了我們認為難以克服的技術挑戰。這座大樓現在已成為我們公司的驕傲，為我們在亞太地區的業務提供了理想的辦公環境。
-                </p>
-                <div class="testimonial-author">張志遠</div>
-                <div class="testimonial-position">亞太投資集團董事長</div>
             </div>
         </section>
 
         <!-- Related Projects Section -->
-        <section class="project-section light">
+        <section class="project-section dark">
             <div class="project-container">
                 <div class="section-intro">
                     <h2 class="section-title">相關專案</h2>
-                    <p class="section-subtitle">探索更多我們的商業建築作品</p>
+                    <p class="section-subtitle">探索更多我們的外牆系統工程</p>
                     <div class="section-divider"></div>
                 </div>
 
                 <div class="related-projects">
-                    <div class="related-grid">
-                        <div class="related-item">
-                            <img src="3j8u55r3j8.jpg" alt="九龍灣住宅綜合體" class="related-image">
-                            <div class="related-overlay">
-                                <h3 class="related-title">九龍灣住宅綜合體</h3>
-                                <p class="related-category">住宅項目 | 2022年完成</p>
-                                <a href="kowloon-residential.html" class="related-link">查看詳情</a>
-                            </div>
+                    <div class="related-card">
+                        <div class="related-image">
+                            <img src="images/PU2.jpeg" alt="香港理工大學鋁板更換項目">
                         </div>
-
-                        <div class="related-item">
-                            <img src="gzbk84jgnq.jpg" alt="新界工業創新園區" class="related-image">
-                            <div class="related-overlay">
-                                <h3 class="related-title">新界工業創新園區</h3>
-                                <p class="related-category">工業設施 | 2021年完成</p>
-                                <a href="newterritories-industrial.html" class="related-link">查看詳情</a>
-                            </div>
-                        </div>
-
-                        <div class="related-item">
-                            <img src="6eaj8kacmu.jpg" alt="香港科技創新中心" class="related-image">
-                            <div class="related-overlay">
-                                <h3 class="related-title">香港科技創新中心</h3>
-                                <p class="related-category">商業建築 | 2022年完成</p>
-                                <a href="#" class="related-link">查看詳情</a>
-                            </div>
+                        <div class="related-content">
+                            <h3 class="related-title">香港理工大學鋁板更換項目</h3>
+                            <p class="related-description">大學設施，2025年進行中</p>
+                            <a href="cbd.html" class="related-link">查看詳情 →</a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section dark">
-            <div class="project-container">
-                <h2 class="cta-title">想要打造您的商業建築項目？</h2>
-                <p class="cta-text">
-                    峰盛工程有限公司擁有30年商業建築經驗，我們的專業團隊能為您提供全方位的工程解決方案，從設計到施工，一站式服務。
-                </p>
-                <div class="cta-buttons">
-                    <a href="index.html#contact" class="btn-primary">聯絡我們</a>
-                    <a href="index.html#services" class="btn-secondary">了解服務</a>
+                    <div class="related-card">
+                        <div class="related-image">
+                            <img src="images/HK-airport 3 runway.png" alt="香港國際機場三跑系統">
+                        </div>
+                        <div class="related-content">
+                            <h3 class="related-title">香港國際機場三跑系統</h3>
+                            <p class="related-description">機場設施，2023年進行中</p>
+                            <a href="Airport.html" class="related-link">查看詳情 →</a>
+                        </div>
+                    </div>
+
+                    <div class="related-card">
+                        <div class="related-image">
+                            <img src="images/KCH2.jpg" alt="葵涌醫院重建工程">
+                        </div>
+                        <div class="related-content">
+                            <h3 class="related-title">葵涌醫院重建工程</h3>
+                            <p class="related-description">醫院重建，2024年完成</p>
+                            <a href="KCH2.html" class="related-link">查看詳情 →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -943,7 +737,7 @@
 
         // Animate elements when they come into view
         const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.info-card, .gallery-item, .challenge-card, .related-item');
+            const elements = document.querySelectorAll('.feature-card, .stat-card, .timeline-card, .challenge-item, .related-card');
             
             elements.forEach(el => {
                 const rect = el.getBoundingClientRect();
@@ -957,27 +751,6 @@
         
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
-
-        // Add data-aos attributes to elements
-        document.querySelectorAll('.info-card').forEach((el, index) => {
-            el.setAttribute('data-aos', 'fade-up');
-            el.setAttribute('data-aos-delay', (index * 100) % 500);
-        });
-        
-        document.querySelectorAll('.gallery-item').forEach((el, index) => {
-            el.setAttribute('data-aos', 'zoom-in');
-            el.setAttribute('data-aos-delay', (index * 100) % 500);
-        });
-        
-        document.querySelectorAll('.challenge-card').forEach((el, index) => {
-            el.setAttribute('data-aos', 'fade-up');
-            el.setAttribute('data-aos-delay', (index * 100) % 500);
-        });
-        
-        document.querySelectorAll('.related-item').forEach((el, index) => {
-            el.setAttribute('data-aos', 'fade-up');
-            el.setAttribute('data-aos-delay', (index * 100) % 500);
-        });
 
         // Language selector
         const langBtn = document.querySelector('.lang-btn');

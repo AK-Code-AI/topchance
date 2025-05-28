@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>香港中環商業區 - 峰盛工程有限公司</title>
+    <title>香港理工大學鋁板更換項目 - 峰盛工程有限公司</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/lang.js" defer></script>
     <style>
-        /* CBD Page Specific Styles */
-        .cbd-hero {
+        /* Project Page Specific Styles */
+        .project-hero {
             height: 100vh;
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('gzbk84jgnq.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/PU2.jpeg');
             background-size: cover;
             background-position: center;
         }
         
-        .cbd-hero-content {
+        .project-hero-content {
             text-align: center;
             color: var(--color-text-light);
             max-width: 80rem;
@@ -30,8 +30,8 @@
             z-index: 2;
         }
         
-        .cbd-hero-title {
-            font-size: 7rem;
+        .project-hero-title {
+            font-size: 6rem;
             font-weight: 700;
             margin-bottom: 2rem;
             background: linear-gradient(135deg, #fff, var(--color-accent));
@@ -40,379 +40,265 @@
             color: transparent;
         }
         
-        .cbd-subtitle {
+        .project-subtitle {
             font-size: 2rem;
             margin-bottom: 3rem;
             color: var(--color-text-light);
         }
         
-        .scroll-down {
-            position: absolute;
-            bottom: 5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            color: var(--color-text-light);
-            font-size: 3rem;
-        }
-        
-        .cbd-section {
+        .project-section {
             padding: 10rem 5%;
             position: relative;
         }
         
-        .cbd-section.light {
+        .project-section.light {
             background-color: var(--color-light);
             color: var(--color-text-dark);
         }
         
-        .cbd-section.dark {
+        .project-section.dark {
             background-color: var(--color-dark);
             color: var(--color-text-light);
         }
         
-        .cbd-container {
+        .project-container {
             max-width: 120rem;
             margin: 0 auto;
         }
         
-        .history-timeline {
-            position: relative;
-            padding: 4rem 0;
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-top: 5rem;
         }
         
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0.4rem;
-            height: 100%;
-            background: var(--gradient-primary);
-            top: 0;
-            border-radius: 2rem;
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 5rem;
         }
         
-        .timeline-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8rem;
-            position: relative;
-        }
-        
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: auto;
-            text-align: left;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: auto;
-            text-align: right;
-            order: -1;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            z-index: 2;
-        }
-        
-        .timeline-year {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            color: var(--color-text-light);
-            font-weight: 700;
-            font-size: 2rem;
-            width: 8rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .timeline-content {
-            width: 45%;
+        .stat-card {
             background: rgba(255, 255, 255, 0.05);
             padding: 3rem;
             border-radius: var(--radius-lg);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-md);
+            text-align: center;
             border: 1px solid var(--color-border);
-            transition: transform var(--transition-normal);
         }
         
-        .timeline-content:hover {
-            transform: translateY(-10px);
-        }
-        
-        .timeline-title {
+        .stat-number {
             font-family: var(--font-heading);
-            font-size: 2.4rem;
-            margin-bottom: 1.5rem;
+            font-size: 4rem;
+            font-weight: 700;
             color: var(--color-secondary);
+            margin-bottom: 1rem;
         }
         
-        .timeline-text {
+        .stat-label {
             font-size: 1.6rem;
-            line-height: 1.6;
+            color: var(--color-text-muted);
         }
         
-        .buildings-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
             gap: 3rem;
             margin-top: 5rem;
         }
         
-        .building-card {
+        .feature-card {
             background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
             border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: transform var(--transition-normal);
             border: 1px solid var(--color-border);
-            height: 40rem;
+            transition: transform var(--transition-normal);
         }
         
-        .building-card:hover {
+        .feature-card:hover {
             transform: translateY(-10px);
         }
         
-        .building-image {
-            height: 20rem;
-            overflow: hidden;
+        .feature-icon {
+            font-size: 4rem;
+            color: var(--color-secondary);
+            margin-bottom: 2rem;
         }
         
-        .building-image img {
+        .feature-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-description {
+            font-size: 1.6rem;
+            line-height: 1.6;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 25rem;
+        }
+        
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform var(--transition-slow);
         }
         
-        .building-card:hover .building-image img {
+        .gallery-item:hover img {
             transform: scale(1.1);
         }
         
-        .building-info {
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
             padding: 2rem;
+            color: white;
         }
         
-        .building-name {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
+        .timeline-section {
+            padding: 5rem 0;
+        }
+        
+        .timeline-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .timeline-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            text-align: center;
+        }
+        
+        .timeline-date {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-secondary);
             margin-bottom: 1rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-top: 5rem;
+        }
+        
+        .challenge-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+        }
+        
+        .challenge-title {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
             color: var(--color-secondary);
         }
         
-        .building-details {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-text-muted);
-        }
-        
-        .building-description {
-            font-size: 1.5rem;
-            line-height: 1.5;
-        }
-        
-        .facts-container {
+        .related-projects {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
             gap: 3rem;
             margin-top: 5rem;
         }
         
-        .fact-card {
+        .related-card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 3rem;
-            border-radius: var(--radius-lg);
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--color-border);
-            transition: all var(--transition-normal);
-        }
-        
-        .fact-card:hover {
-            transform: translateY(-10px);
-            background: var(--gradient-primary);
-        }
-        
-        .fact-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            color: var(--color-secondary);
-            transition: color var(--transition-normal);
-        }
-        
-        .fact-card:hover .fact-icon {
-            color: var(--color-text-light);
-        }
-        
-        .fact-title {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .fact-text {
-            font-size: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .fact-card:hover .fact-title,
-        .fact-card:hover .fact-text {
-            color: var(--color-text-light);
-        }
-        
-        .cta-section {
-            text-align: center;
-            padding: 8rem 5%;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('3j8u55r3j8.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--color-text-light);
-        }
-        
-        .cta-title {
-            font-family: var(--font-heading);
-            font-size: 4rem;
-            margin-bottom: 2rem;
-        }
-        
-        .cta-text {
-            font-size: 1.8rem;
-            max-width: 70rem;
-            margin: 0 auto 3rem;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .model-viewer {
-            width: 100%;
-            height: 50rem;
-            margin-top: 5rem;
             border-radius: var(--radius-lg);
             overflow: hidden;
-            position: relative;
+            border: 1px solid var(--color-border);
+            transition: transform var(--transition-normal);
         }
         
-        /* 3D Cube Animation */
-        .cube-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
-            margin: 5rem 0;
+        .related-card:hover {
+            transform: translateY(-10px);
         }
         
-        .cbd-cube {
-            width: 20rem;
+        .related-image {
             height: 20rem;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: rotateCube 20s infinite linear;
+            overflow: hidden;
         }
         
-        .cube-face {
-            position: absolute;
-            width: 20rem;
-            height: 20rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid var(--color-secondary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            color: var(--color-text-light);
-            backdrop-filter: blur(5px);
-        }
-        
-        .cube-front { transform: translateZ(10rem); }
-        .cube-back { transform: rotateY(180deg) translateZ(10rem); }
-        .cube-right { transform: rotateY(90deg) translateZ(10rem); }
-        .cube-left { transform: rotateY(-90deg) translateZ(10rem); }
-        .cube-top { transform: rotateX(90deg) translateZ(10rem); }
-        .cube-bottom { transform: rotateX(-90deg) translateZ(10rem); }
-        
-        @keyframes rotateCube {
-            0% { transform: rotateX(0) rotateY(0); }
-            100% { transform: rotateX(360deg) rotateY(360deg); }
-        }
-        
-        .cube-img {
+        .related-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.8;
+        }
+        
+        .related-content {
+            padding: 2rem;
+        }
+        
+        .related-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--color-secondary);
+        }
+        
+        .related-description {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-muted);
+        }
+        
+        .related-link {
+            color: var(--color-secondary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+        
+        .related-link:hover {
+            color: var(--color-primary);
         }
         
         @media (max-width: 992px) {
-            .timeline-line {
-                left: 2rem;
+            .overview-grid,
+            .challenges-grid {
+                grid-template-columns: 1fr;
             }
             
-            .timeline-dot {
-                left: 2rem;
-            }
-            
-            .timeline-year {
-                left: 2rem;
-                width: auto;
-                text-align: left;
-            }
-            
-            .timeline-item {
-                flex-direction: column;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 5rem;
-                margin-right: 0;
-                text-align: left;
-                width: auto;
-                order: 2;
+            .project-stats {
+                grid-template-columns: 1fr;
             }
         }
         
         @media (max-width: 768px) {
-            .cbd-hero-title {
-                font-size: 5rem;
-            }
-            
-            .cbd-subtitle {
-                font-size: 1.8rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .cbd-hero-title {
+            .project-hero-title {
                 font-size: 4rem;
             }
             
-            .timeline-content {
-                padding: 2rem;
-            }
-            
-            .cbd-section {
-                padding: 8rem 5%;
+            .project-subtitle {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -488,345 +374,304 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="cbd-hero">
-            <div class="cbd-hero-content">
-                <h1 class="cbd-hero-title">香港中環商業區</h1>
-                <p class="cbd-subtitle">亞洲金融中心的心臟地帶，融合歷史與現代的城市地標</p>
-                <a href="#about-cbd" class="btn-primary">探索中環</a>
+        <section class="project-hero">
+            <div class="project-hero-content">
+                <h1 class="project-hero-title">香港理工大學鋁板更換項目</h1>
+                <p class="project-subtitle">專業外牆鋁板翻新工程，提升建築美觀與性能</p>
+                <a href="#project-overview" class="btn-primary">了解詳情</a>
             </div>
-            <div class="scroll-down">
-                <i class="fas fa-chevron-down"></i>
+            <div class="scroll-indicator">
+                <span>向下滾動</span>
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
         </section>
 
-        <!-- About CBD Section -->
-        <section id="about-cbd" class="cbd-section light">
-            <div class="cbd-container">
+        <!-- Project Overview Section -->
+        <section id="project-overview" class="project-section light">
+            <div class="project-container">
                 <div class="section-intro">
-                    <h2 class="section-title">關於中環</h2>
-                    <p class="section-subtitle">香港的金融與商業樞紐</p>
+                    <h2 class="section-title">專案概述</h2>
+                    <p class="section-subtitle">大學設施現代化改造 | 2025年進行中</p>
                     <div class="section-divider"></div>
                 </div>
 
-                <div class="row" style="display: flex; gap: 5rem; flex-wrap: wrap; margin-top: 5rem;">
-                    <div style="flex: 1; min-width: 30rem;">
+                <div class="overview-grid">
+                    <div>
                         <p style="font-size: 1.7rem; margin-bottom: 2rem; line-height: 1.7;">
-                            中環（英語：Central），又稱中區，是香港的中央商業區，位於香港島北岸，對面是九龍半島的尖沙咀。這裡是香港最繁華的地區之一，集中了眾多國際金融機構、銀行總部和商業辦公大樓。
+                            香港理工大學鋁板更換項目是一項重要的建築外牆翻新工程，旨在更新老化的外牆鋁板系統，提升建築的美觀性和耐久性。
                         </p>
                         <p style="font-size: 1.7rem; margin-bottom: 2rem; line-height: 1.7;">
-                            中環是香港金融業的中心，許多跨國公司在此設立地區總部，包括香港交易所、匯豐銀行、恒生銀行和中國銀行等。這裡的摩天大樓形成了香港著名的天際線，是全球最具代表性的金融區之一。
+                            本項目採用最新的鋁板技術和安裝工藝，確保新的外牆系統能夠抵抗香港的氣候條件，同時符合大學的美學要求和環保標準。
                         </p>
                         <p style="font-size: 1.7rem; line-height: 1.7;">
-                            除了現代化的商業大廈外，中環還保留了許多殖民時期的歷史建築，展示了香港獨特的東西方融合文化。從維多利亞時代的法院大樓到現代化的國際金融中心，中環體現了香港的發展歷程和多元文化。
+                            峰盛工程憑藉豐富的大學設施改造經驗，為理工大學提供全面的技術解決方案，確保項目順利進行且不影響校園正常運作。
                         </p>
                     </div>
-                    <div style="flex: 1; min-width: 30rem;">
-                        <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
-                            <img src="6eaj8kacmu.jpg" alt="香港中環天際線" style="width: 100%; height: auto;">
-                            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); padding: 2rem; color: white;">
-                                <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">維多利亞港夜景</h3>
-                                <p style="font-size: 1.4rem;">從九龍欣賞的香港島中環天際線</p>
-                            </div>
-                        </div>
+                    <div>
+                        <img src="images/PU2.jpeg" alt="香港理工大學" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
                     </div>
                 </div>
 
-                <!-- 3D Cube Animation -->
-                <div class="cube-container">
-                    <div class="cbd-cube">
-                        <div class="cube-face cube-front">
-                            <img src="gzbk84jgnq.jpg" alt="中環天際線" class="cube-img">
-                        </div>
-                        <div class="cube-face cube-back">
-                            <img src="6eaj8kacmu.jpg" alt="國際金融中心" class="cube-img">
-                        </div>
-                        <div class="cube-face cube-right">
-                            <img src="3j8u55r3j8.jpg" alt="中環街道" class="cube-img">
-                        </div>
-                        <div class="cube-face cube-left">
-                            <img src="gzbk84jgnq.jpg" alt="中環大廈" class="cube-img">
-                        </div>
-                        <div class="cube-face cube-top">
-                            <img src="3j8u55r3j8.jpg" alt="中環景觀" class="cube-img">
-                        </div>
-                        <div class="cube-face cube-bottom">
-                            <img src="6eaj8kacmu.jpg" alt="中環建築" class="cube-img">
-                        </div>
+                <div class="project-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">15,000</div>
+                        <div class="stat-label">平方米外牆面積</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">個月工期</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">25</div>
+                        <div class="stat-label">專業技術人員</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">環保材料使用</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- History Section -->
-        <section class="cbd-section dark">
-            <div class="cbd-container">
+        <!-- Features Section -->
+        <section class="project-section dark">
+            <div class="project-container">
                 <div class="section-intro">
-                    <h2 class="section-title">中環歷史</h2>
-                    <p class="section-subtitle">從維多利亞城到國際金融中心</p>
+                    <h2 class="section-title">項目特色</h2>
+                    <p class="section-subtitle">現代化鋁板系統的技術優勢</p>
                     <div class="section-divider"></div>
                 </div>
 
-                <div class="history-timeline">
-                    <div class="timeline-line"></div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-year">1841</div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">殖民地創立</h3>
-                            <p class="timeline-text">
-                                1841年，香港殖民地成立，現在被稱為「中環」的地區當時被命名為「維多利亞城」。這一地區最初被選為城市主要軍事設施和行政中心的所在地。
-                            </p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
+                        <h3 class="feature-title">耐候性能</h3>
+                        <p class="feature-description">
+                            採用高品質鋁合金材料，具備優異的耐腐蝕和抗風壓性能，適應香港多變的氣候環境。
+                        </p>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-year">1890s</div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">商業中心形成</h3>
-                            <p class="timeline-text">
-                                19世紀末，中環已經發展成為香港的商業和金融中心。這一時期，許多歐洲風格的建築物在該地區建成，包括標誌性的終審法院大樓（前立法會大樓）。
-                            </p>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
                         </div>
+                        <h3 class="feature-title">環保節能</h3>
+                        <p class="feature-description">
+                            使用環保鋁板材料，具備良好的保溫隔熱性能，有效降低建築能耗，符合綠色建築標準。
+                        </p>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-year">1960s</div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">現代化轉型</h3>
-                            <p class="timeline-text">
-                                20世紀60年代，香港經濟快速發展，中環開始了現代化轉型。許多舊建築被拆除，取而代之的是現代化的辦公大樓，標誌著香港從傳統殖民地向國際金融中心的轉變。
-                            </p>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
                         </div>
+                        <h3 class="feature-title">美觀設計</h3>
+                        <p class="feature-description">
+                            現代化的外觀設計，色彩搭配協調，提升了大學建築的整體視覺效果和品牌形象。
+                        </p>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-year">1979</div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">匯豐銀行總部落成</h3>
-                            <p class="timeline-text">
-                                1979年，設計前衛的匯豐銀行總部大樓在中環落成，由著名建築師諾曼·福斯特設計，成為香港天際線的標誌性建築之一，也是當時全球最昂貴的建築物之一。
-                            </p>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
                         </div>
+                        <h3 class="feature-title">易於維護</h3>
+                        <p class="feature-description">
+                            鋁板表面處理先進，易於清潔維護，降低長期維護成本，延長使用壽命。
+                        </p>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-year">2003</div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">國際金融中心二期落成</h3>
-                            <p class="timeline-text">
-                                2003年，高達415.8米的國際金融中心二期（IFC II）建成，成為當時香港最高的建築物，進一步鞏固了中環作為亞洲金融中心的地位。
-                            </p>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
                         </div>
+                        <h3 class="feature-title">施工效率</h3>
+                        <p class="feature-description">
+                            採用模組化安裝方式，施工效率高，最大程度減少對校園日常活動的影響。
+                        </p>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-year">2018</div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">大館開幕</h3>
-                            <p class="timeline-text">
-                                2018年，位於中環的前中區警署建築群經過修復後，變身為大館文化藝術中心。這個項目由瑞士建築師赫爾佐格和德梅隆設計，是香港最大的歷史建築保育項目。
-                            </p>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
                         </div>
+                        <h3 class="feature-title">品質保證</h3>
+                        <p class="feature-description">
+                            嚴格的品質控制體系，所有材料和工藝均符合香港建築標準和大學要求。
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Iconic Buildings Section -->
-        <section class="cbd-section light">
-            <div class="cbd-container">
+        <!-- Gallery Section -->
+        <section class="project-section light">
+            <div class="project-container">
                 <div class="section-intro">
-                    <h2 class="section-title">標誌性建築</h2>
-                    <p class="section-subtitle">塑造香港天際線的經典建築</p>
+                    <h2 class="section-title">專案圖集</h2>
+                    <p class="section-subtitle">鋁板更換工程的視覺展示</p>
                     <div class="section-divider"></div>
                 </div>
 
-                <div class="buildings-grid">
-                    <div class="building-card">
-                        <div class="building-image">
-                            <img src="gzbk84jgnq.jpg" alt="國際金融中心">
-                        </div>
-                        <div class="building-info">
-                            <h3 class="building-name">國際金融中心</h3>
-                            <p class="building-details">建成年份: 2003年 | 高度: 415.8米</p>
-                            <p class="building-description">
-                                國際金融中心是香港的地標性建築，由兩座摩天大樓組成，二期大樓曾是香港最高的建築物。該綜合體包含辦公空間、高級購物中心和四季酒店。
-                            </p>
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="images/PU2.jpeg" alt="理工大學建築外觀">
+                        <div class="gallery-overlay">
+                            <h3>更新後的建築外觀</h3>
+                            <p>現代化鋁板系統</p>
                         </div>
                     </div>
-
-                    <div class="building-card">
-                        <div class="building-image">
-                            <img src="3j8u55r3j8.jpg" alt="匯豐銀行總部">
-                        </div>
-                        <div class="building-info">
-                            <h3 class="building-name">匯豐銀行總部</h3>
-                            <p class="building-details">建成年份: 1985年 | 高度: 180米</p>
-                            <p class="building-description">
-                                由諾曼·福斯特設計的匯豐銀行總部是香港最具代表性的建築之一，其獨特的高科技外觀和模組化結構設計在當時領先全球建築潮流。
-                            </p>
+                    <div class="gallery-item">
+                        <img src="gzbk84jgnq.jpg" alt="施工過程">
+                        <div class="gallery-overlay">
+                            <h3>專業施工團隊</h3>
+                            <p>精密安裝作業</p>
                         </div>
                     </div>
-
-                    <div class="building-card">
-                        <div class="building-image">
-                            <img src="6eaj8kacmu.jpg" alt="中銀大廈">
-                        </div>
-                        <div class="building-info">
-                            <h3 class="building-name">中銀大廈</h3>
-                            <p class="building-details">建成年份: 1990年 | 高度: 367.4米</p>
-                            <p class="building-description">
-                                由華裔建築師貝聿銘設計的中銀大廈是香港天際線的重要組成部分，其獨特的幾何外形和對稱設計被視為現代建築的傑作。
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="building-card">
-                        <div class="building-image">
-                            <img src="gzbk84jgnq.jpg" alt="長江中心">
-                        </div>
-                        <div class="building-info">
-                            <h3 class="building-name">長江中心</h3>
-                            <p class="building-details">建成年份: 1999年 | 高度: 283米</p>
-                            <p class="building-description">
-                                長江中心是香港首富李嘉誠旗下長江實業的總部，這座現代化的辦公大樓以其優雅的外觀和先進的設施成為中環商業區的重要地標。
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="building-card">
-                        <div class="building-image">
-                            <img src="3j8u55r3j8.jpg" alt="大館">
-                        </div>
-                        <div class="building-info">
-                            <h3 class="building-name">大館</h3>
-                            <p class="building-details">建成年份: 1864年 | 翻新: 2018年</p>
-                            <p class="building-description">
-                                大館前身是中區警署建築群，經過精心修復後變成了藝術文化中心，結合了歷史建築和現代設計，是香港最大的歷史建築保育項目。
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="building-card">
-                        <div class="building-image">
-                            <img src="6eaj8kacmu.jpg" alt="交易廣場">
-                        </div>
-                        <div class="building-info">
-                            <h3 class="building-name">交易廣場</h3>
-                            <p class="building-details">建成年份: 1985年 | 高度: 218米</p>
-                            <p class="building-description">
-                                交易廣場是香港交易所的所在地，由四座辦公大樓組成，是香港金融業的核心所在，每天數十億美元的交易在此進行。
-                            </p>
+                    <div class="gallery-item">
+                        <img src="6eaj8kacmu.jpg" alt="材料展示">
+                        <div class="gallery-overlay">
+                            <h3>高品質鋁板材料</h3>
+                            <p>環保耐用材質</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Key Facts Section -->
-        <section class="cbd-section dark">
-            <div class="cbd-container">
+        <!-- Timeline Section -->
+        <section class="project-section dark">
+            <div class="project-container">
                 <div class="section-intro">
-                    <h2 class="section-title">中環要點</h2>
-                    <p class="section-subtitle">了解亞洲金融中心的核心數據</p>
+                    <h2 class="section-title">專案進程</h2>
+                    <p class="section-subtitle">從規劃到完成的時間線</p>
                     <div class="section-divider"></div>
                 </div>
 
-                <div class="facts-container">
-                    <div class="fact-card">
-                        <div class="fact-icon">
-                            <i class="fas fa-landmark"></i>
-                        </div>
-                        <h3 class="fact-title">金融中心</h3>
-                        <p class="fact-text">
-                            中環是香港的金融中心，全球70多家銀行和許多跨國公司的總部或亞太區總部都設在這裡，是亞洲最重要的金融區之一。
-                        </p>
+                <div class="timeline-items">
+                    <div class="timeline-card">
+                        <div class="timeline-date">2024年9月</div>
+                        <h3 class="timeline-title">項目啟動</h3>
+                        <p>完成現場勘察和設計方案確認</p>
                     </div>
-
-                    <div class="fact-card">
-                        <div class="fact-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3 class="fact-title">摩天大樓</h3>
-                        <p class="fact-text">
-                            中環擁有超過35棟高度超過150米的摩天大樓，形成了香港著名的天際線，是全球摩天大樓密度最高的地區之一。
-                        </p>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2024年12月</div>
+                        <h3 class="timeline-title">材料採購</h3>
+                        <p>完成所有鋁板材料的採購和品質檢驗</p>
                     </div>
-
-                    <div class="fact-card">
-                        <div class="fact-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="fact-title">經濟貢獻</h3>
-                        <p class="fact-text">
-                            中環商業區對香港GDP的貢獻超過40%，每天產生的經濟活動價值超過100億港元，是香港經濟的引擎。
-                        </p>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2025年1月</div>
+                        <h3 class="timeline-title">施工開始</h3>
+                        <p>正式開始外牆鋁板拆除和安裝工作</p>
                     </div>
-
-                    <div class="fact-card">
-                        <div class="fact-icon">
-                            <i class="fas fa-history"></i>
-                        </div>
-                        <h3 class="fact-title">歷史傳承</h3>
-                        <p class="fact-text">
-                            中環保留了多個殖民時期的歷史建築，包括前立法會大樓、聖約翰教堂和大館，展示了香港獨特的文化遺產。
-                        </p>
-                    </div>
-
-                    <div class="fact-card">
-                        <div class="fact-icon">
-                            <i class="fas fa-subway"></i>
-                        </div>
-                        <h3 class="fact-title">交通樞紐</h3>
-                        <p class="fact-text">
-                            中環是香港的交通中心，匯集港鐵、電車、巴士、渡輪和中環至半山自動扶梯等多種交通工具，每天人流超過200萬。
-                        </p>
-                    </div>
-
-                    <div class="fact-card">
-                        <div class="fact-icon">
-                            <i class="fas fa-store"></i>
-                        </div>
-                        <h3 class="fact-title">商業與生活</h3>
-                        <p class="fact-text">
-                            除了辦公大樓，中環還擁有豐富的購物、餐飲和娛樂設施，蘭桂坊和蘇豪區是著名的餐飲娛樂區，展示了中環的多元化面貌。
-                        </p>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2025年6月</div>
+                        <h3 class="timeline-title">預計完工</h3>
+                        <p>完成所有安裝工作和最終品質檢驗</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Interactive Model Section -->
-        <section class="cbd-section light">
-            <div class="cbd-container">
+        <!-- Challenges Section -->
+        <section class="project-section light">
+            <div class="project-container">
                 <div class="section-intro">
-                    <h2 class="section-title">中環城市模型</h2>
-                    <p class="section-subtitle">探索香港商業中心區的建築</p>
+                    <h2 class="section-title">挑戰與解決方案</h2>
+                    <p class="section-subtitle">我們如何克服項目中的技術難題</p>
                     <div class="section-divider"></div>
                 </div>
-                
-                <div class="model-viewer">
-                    <iframe src="index2.html" width="100%" height="100%" frameborder="0"></iframe>
+
+                <div class="challenges-grid">
+                    <div class="challenge-item">
+                        <h3 class="challenge-title">校園運作不中斷</h3>
+                        <p style="font-size: 1.6rem; line-height: 1.6; margin-bottom: 2rem;">
+                            <strong>挑戰：</strong>在不影響大學正常教學和研究活動的前提下進行施工作業。
+                        </p>
+                        <p style="font-size: 1.6rem; line-height: 1.6;">
+                            <strong>解決方案：</strong>制定詳細的施工計劃，採用分階段施工方式，避開考試期間，並使用低噪音施工設備。
+                        </p>
+                    </div>
+
+                    <div class="challenge-item">
+                        <h3 class="challenge-title">高空作業安全</h3>
+                        <p style="font-size: 1.6rem; line-height: 1.6; margin-bottom: 2rem;">
+                            <strong>挑戰：</strong>大學建築高度較高，需要確保高空作業的絕對安全。
+                        </p>
+                        <p style="font-size: 1.6rem; line-height: 1.6;">
+                            <strong>解決方案：</strong>使用專業的腳手架系統和安全防護設備，所有工人均經過嚴格的安全培訓。
+                        </p>
+                    </div>
+
+                    <div class="challenge-item">
+                        <h3 class="challenge-title">舊建築結構適應</h3>
+                        <p style="font-size: 1.6rem; line-height: 1.6; margin-bottom: 2rem;">
+                            <strong>挑戰：</strong>需要將新的鋁板系統適配到現有的建築結構上。
+                        </p>
+                        <p style="font-size: 1.6rem; line-height: 1.6;">
+                            <strong>解決方案：</strong>進行詳細的結構分析，設計專用的連接件和支撐系統，確保完美契合。
+                        </p>
+                    </div>
+
+                    <div class="challenge-item">
+                        <h3 class="challenge-title">環保要求達標</h3>
+                        <p style="font-size: 1.6rem; line-height: 1.6; margin-bottom: 2rem;">
+                            <strong>挑戰：</strong>滿足大學嚴格的環保和可持續發展要求。
+                        </p>
+                        <p style="font-size: 1.6rem; line-height: 1.6;">
+                            <strong>解決方案：</strong>選用100%可回收的鋁板材料，採用環保施工工藝，最大程度減少環境影響。
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="cbd-container">
-                <h2 class="cta-title">探索我們在中環的專案</h2>
-                <p class="cta-text">
-                    峰盛工程有限公司在香港中環地區擁有豐富的工程經驗，我們曾參與多個標誌性建築的建設和維護。聯繫我們，了解更多關於我們如何為您的中環項目提供專業服務。
-                </p>
-                <div class="cta-buttons">
-                    <a href="index.html#projects" class="btn-primary">查看專案</a>
-                    <a href="index.html#contact" class="btn-secondary">聯絡我們</a>
+        <!-- Related Projects Section -->
+        <section class="project-section dark">
+            <div class="project-container">
+                <div class="section-intro">
+                    <h2 class="section-title">相關專案</h2>
+                    <p class="section-subtitle">探索更多我們的大學及建築外牆項目</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="related-projects">
+                    <div class="related-card">
+                        <div class="related-image">
+                            <img src="images/KCH2.jpg" alt="葵涌醫院">
+                        </div>
+                        <div class="related-content">
+                            <h3 class="related-title">葵涌醫院重建工程</h3>
+                            <p class="related-description">醫院重建項目，2024年完成</p>
+                            <a href="KCH2.html" class="related-link">查看詳情 →</a>
+                        </div>
+                    </div>
+
+                    <div class="related-card">
+                        <div class="related-image">
+                            <img src="images/OP1.jpg" alt="港島商業中心">
+                        </div>
+                        <div class="related-content">
+                            <h3 class="related-title">香港港島區商業中心</h3>
+                            <p class="related-description">甲級商業大廈裝修，2025年完成</p>
+                            <a href="hongkong-commercial.html" class="related-link">查看詳情 →</a>
+                        </div>
+                    </div>
+
+                    <div class="related-card">
+                        <div class="related-image">
+                            <img src="images/HK-airport 3 runway.png" alt="機場三跑">
+                        </div>
+                        <div class="related-content">
+                            <h3 class="related-title">香港國際機場三跑系統</h3>
+                            <p class="related-description">機場設施工程，2023年進行中</p>
+                            <a href="Airport.html" class="related-link">查看詳情 →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -931,39 +776,6 @@
             }, 100);
         });
 
-        // Animate elements when they come into view
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.timeline-content, .building-card, .fact-card');
-            
-            elements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                if (rect.top <= windowHeight * 0.85) {
-                    el.classList.add('aos-animate');
-                }
-            });
-        };
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Add data-aos attributes to elements
-        document.querySelectorAll('.timeline-content').forEach((el, index) => {
-            el.setAttribute('data-aos', index % 2 === 0 ? 'fade-right' : 'fade-left');
-            el.setAttribute('data-aos-delay', (index * 100) % 500);
-        });
-        
-        document.querySelectorAll('.building-card').forEach((el, index) => {
-            el.setAttribute('data-aos', 'zoom-in');
-            el.setAttribute('data-aos-delay', (index * 100) % 500);
-        });
-        
-        document.querySelectorAll('.fact-card').forEach((el, index) => {
-            el.setAttribute('data-aos', 'fade-up');
-            el.setAttribute('data-aos-delay', (index * 100) % 500);
-        });
-
         // Language selector
         const langBtn = document.querySelector('.lang-btn');
         const langDropdown = document.querySelector('.lang-dropdown');
@@ -980,6 +792,23 @@
                 langDropdown.classList.remove('active');
             }
         });
+
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.feature-card, .stat-card, .timeline-card, .challenge-item, .related-card');
+            
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                if (rect.top <= windowHeight * 0.85) {
+                    el.classList.add('aos-animate');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>

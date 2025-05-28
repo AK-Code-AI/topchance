@@ -536,10 +536,10 @@ nav ul {
 
 .hero-text h1 {
     font-family: var(--font-heading);
-    font-size: 7rem;
+    font-size: 5rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     overflow: hidden;
 }
 
@@ -882,6 +882,7 @@ nav ul {
     font-size: 1.8rem;
     color: var(--color-text-muted);
     margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
 .section-divider {
@@ -1575,6 +1576,7 @@ nav ul {
 
 .footer-logo p {
     font-size: 1.4rem;
+    text-decoration-line:var(--color-border)
     color: var(--color-text-muted);
 }
 
