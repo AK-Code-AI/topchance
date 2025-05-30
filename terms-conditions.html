@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>條款和條件 - 峰盛工程有限公司</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/lang.js" defer></script>
+    <style>
+        .terms-container {
+            max-width: 100rem;
+            margin: 0 auto;
+            padding: 5rem 5%;
+            background-color: var(--color-light);
+            color: var(--color-text-dark);
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        .dark-mode .terms-container {
+            background-color: var(--color-dark);
+            color: var(--color-text-light);
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .terms-logo {
+            max-width: 20rem;
+            margin-bottom: 3rem;
+        }
+
+        .terms-title {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--color-primary);
+        }
+
+        .last-updated {
+            font-size: 1.4rem;
+            color: var(--color-text-muted);
+            margin-bottom: 3rem;
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .lang-btn {
+            padding: 1rem 2rem;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 1.4rem;
+            transition: all var(--transition-normal);
+        }
+
+        .lang-btn.active {
+            background-color: var(--color-secondary);
+        }
+
+        .lang-btn:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-2px);
+        }
+
+        .terms-content {
+            max-width: 80rem;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .terms-content h2 {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            margin: 3rem 0 1.5rem 0;
+            color: var(--color-secondary);
+            border-left: 4px solid var(--color-primary);
+            padding-left: 2rem;
+        }
+
+        .terms-content p {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .terms-content ul {
+            margin: 2rem 0;
+            padding-left: 3rem;
+        }
+
+        .terms-content li {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            margin: 3rem 0;
+            border: 1px solid var(--color-border);
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 5rem 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: var(--gradient-primary);
+            color: var(--color-text-light);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-size: 1.6rem;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-md);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .back-to-home {
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 1.6rem;
+            transition: all var(--transition-normal);
+        }
+
+        .back-btn:hover {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            transform: translateY(-2px);
+        }
+
+        .important-notice {
+            font-weight: bold;
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .terms-container {
+                padding: 3rem 3%;
+            }
+
+            .terms-title {
+                font-size: 3rem;
+            }
+
+            .terms-content h2 {
+                font-size: 2rem;
+            }
+
+            .lang-switch {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lang-btn {
+                width: 20rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="theme-toggle">
+        <div class="toggle-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+    </div>
+
+    <div class="lang-selector">
+        <div class="lang-btn">
+            繁體 <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="lang-dropdown">
+            <ul>
+                <li><a href="#" data-lang="zh-hant">繁體</a></li>
+                <li><a href="#" data-lang="en">EN</a></li>
+                <li><a href="#" data-lang="zh-hans">简体</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="terms-container">
+        <div class="terms-header">
+
+            <h1 class="terms-title">條款和條件</h1>
+            <p class="last-updated">最後更新：2025年5月1日</p>
+            
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+
+        <div id="terms-zh" class="terms-content">
+            <p class="important-notice">本條款構成具法律約束力之協議，請您仔細閱讀。</p>
+            
+            <h2>1. 接受條款</h2>
+            <p>本協議由 TopChance Engineering Co. Ltd.（下稱「本公司」）與您（下稱「使用者」）訂立。透過聯絡我們、提交資訊或按下「傳送」等類似按鈕，即表示您同意並接受本協議全部條款，並聲明您有權代表「使用者」作出該等承諾。</p>
+            
+            <h2>2. 服務內容</h2>
+            <p>使用者可提聯絡人資訊（例如電郵地址連結、電話號碼等）以聯繫本公司平台。所有提交內容將由本公司進行存檔及保留。所有費用以報價形式確實，無論結果如何，兩方需遵守合約或報價內容。</p>
+
+            <h2>3. 條款變更</h2>
+            <p>本公司保留隨時修改本條款的權利。修改後的條款將張貼於本網站，並即時生效。您有責任定期查閱更新內容。若您不同意修改內容，請停止使用本服務。</p>
+
+            <h2>4. 使用網頁之協議期限與終止</h2>
+            <p>本公司可隨時、無須事先通知而終止本協議，並有權刪除或取消任何提交內容。</p>
+
+            <h2>5. 收費與付款條款</h2>
+            <p>您同意支付所有適用費用及稅項。若對收費有爭議，須於收費日起十 (10) 天內書面提出，否則視為放棄爭議權利。逾期未付款項將產生每月 1% 的利息，並須負擔本公司為追討欠款所產生的相關費用（包括律師費用）。</p>
+
+            <h2>6. 編輯標準與責任</h2>
+            <p>所有提交資訊均受本公司編輯審查及修改之權利約束。您保證提交內容不含任何違法、誹謗、色情、侵犯他人權利等成分，並同意就因違反本條款引致的任何第三方索償，對本公司及其人員提供完全賠償。</p>
+
+            <h2>7. 網頁使用安全</h2>
+            <p>使用者應妥善保管及確保網頁安全地使用，對網頁破壞發生的所有行為負全責。</p>
+
+            <h2>8. 資訊與私隱</h2>
+            <p>您提交的資料僅用於本公司提供服務之目的。本公司可能於符合法律的情況下，向合作夥伴、法律機關或在企業合併情形中披露此等資訊。</p>
+
+            <h2>9. 授權</h2>
+            <p>您授權本公司非獨家、免權利金使用您的業務標誌、商標與提交資料，以用於本公司業務及平台推廣用途。</p>
+
+            <h2>10. 免責聲明</h2>
+            <p>本公司不對任何明示或暗示之保證（包括適售性、特定用途適合性等）承擔責任。服務以「現狀」及「可用」基礎提供，本公司對網站表現、資料正確性及服務不中斷不作任何保證。</p>
+
+            <h2>11. 責任限制</h2>
+            <p>即使已事先被告知潛在風險，本公司對任何間接、附帶、特別或衍生性損害（包括利潤損失）概不負責。任何責任將不超過您於爭議發生前六個月內已支付本公司的金額。</p>
+
+            <h2>12. 資料收集與使用</h2>
+            <p>您不得在本公司網站上蒐集個人資料，亦不得植入 Cookie 或其他追蹤代碼。所有用戶資料為本公司所有，並受其私隱政策約束。</p>
+
+            <h2>13. 智慧財產權</h2>
+            <p>本公司保留其所有平台內容、技術與設計的智慧財產權，未經授權，不得以任何方式複製或修改。</p>
+
+            <h2>14. 其他條款</h2>
+            <ul>
+                <li>本公司有權隨時修改、刪除或中止服務而無須通知。</li>
+                <li>本條款受香港特別行政區法律管轄，任何爭議須提交香港法院專屬處理。</li>
+                <li>若條款任何部分無效，餘下條款仍具完整效力。</li>
+            </ul>
+
+            <div class="contact-info">
+                <h2>聯絡方式</h2>
+                <p>如需查閱完整政策或有任何疑問，請聯絡我們：</p>
+                <p><strong>峰盛工程有限公司</strong><br>
+                地址：香港九龍旺角新填地街坊576號新輝商業中心6樓D室<br>
+                電話：（852）2390-3535<br>
+                電子郵件：info@topchance.com.hk</p>
+            </div>
+            
+            <p><em>本條款和條件的中文版本與英文版本如有任何差異，以中文版本為準。</em></p>
+        </div>
+
+        <div id="terms-en" class="terms-content hidden">
+            <h1>Terms and Conditions</h1>
+            <p class="important-notice">This agreement constitutes a legally binding contract. Please read it carefully.</p>
+            
+            <h2>1. Acceptance of Terms</h2>
+            <p>This agreement is made between TopChance Engineering Co. Ltd. (hereinafter "the Company") and you (hereinafter "the User"). By contacting us, submitting information, or clicking "Send" or similar buttons, you agree to and accept all terms of this agreement and declare that you have the authority to make such commitments on behalf of the "User".</p>
+            
+            <h2>2. Service Content</h2>
+            <p>Users may provide contact information (such as email links, phone numbers, etc.) to connect with the Company's platform. All submitted content will be archived and retained by the Company. All fees are confirmed in the form of quotations, and regardless of the outcome, both parties must comply with the contract or quotation contents.</p>
+
+            <h2>3. Changes to Terms</h2>
+            <p>The Company reserves the right to modify these terms at any time. The modified terms will be posted on this website and take effect immediately. You are responsible for regularly reviewing the updated content. If you disagree with the modifications, please stop using this service.</p>
+
+            <h2>4. Term and Termination of Website Usage Agreement</h2>
+            <p>The Company may terminate this agreement at any time without prior notice and has the right to delete or cancel any submitted content.</p>
+
+            <h2>5. Charges and Payment Terms</h2>
+            <p>You agree to pay all applicable fees and taxes. If you dispute any charges, you must submit a written objection within ten (10) days of the billing date, otherwise you will be deemed to have waived your right to dispute. Overdue payments will incur 1% interest per month, and you will be responsible for any related costs (including attorney fees) incurred by the Company in recovering the debt.</p>
+
+            <h2>6. Editorial Standards and Responsibilities</h2>
+            <p>All submitted information is subject to the Company's right to review and modify. You guarantee that the submitted content does not contain any illegal, defamatory, pornographic, or rights-infringing elements, and agree to fully indemnify the Company and its personnel against any third-party claims arising from violations of these terms.</p>
+
+            <h2>7. Website Usage Security</h2>
+            <p>Users should properly maintain and ensure secure use of the website, and take full responsibility for any destructive actions that occur on the website.</p>
+
+            <h2>8. Information and Privacy</h2>
+            <p>Your submitted data will only be used for the purpose of providing the Company's services. The Company may disclose such information to partners, legal authorities, or in the event of a corporate merger, in compliance with the law.</p>
+
+            <h2>9. Authorization</h2>
+            <p>You authorize the Company to use your business logos, trademarks, and submitted data on a non-exclusive, royalty-free basis for the Company's business and platform promotion purposes.</p>
+
+            <h2>10. Disclaimer</h2>
+            <p>The Company is not responsible for any express or implied warranties (including merchantability, fitness for a particular purpose, etc.). Services are provided on an "as is" and "as available" basis, and the Company makes no guarantees regarding website performance, data accuracy, or uninterrupted service.</p>
+
+            <h2>11. Limitation of Liability</h2>
+            <p>Even if forewarned of potential risks, the Company is not liable for any indirect, incidental, special, or consequential damages (including loss of profits). Any liability will not exceed the amount you have paid to the Company in the six months prior to the dispute.</p>
+
+            <h2>12. Data Collection and Use</h2>
+            <p>You may not collect personal data on the Company's website, nor may you plant Cookies or other tracking codes. All user data belongs to the Company and is subject to its privacy policy.</p>
+
+            <h2>13. Intellectual Property Rights</h2>
+            <p>The Company reserves all intellectual property rights to its platform content, technology, and design, which may not be copied or modified in any way without authorization.</p>
+
+            <h2>14. Other Terms</h2>
+            <ul>
+                <li>The Company has the right to modify, delete, or suspend services at any time without notice.</li>
+                <li>These terms are governed by the laws of the Hong Kong Special Administrative Region, and any disputes must be submitted to the exclusive jurisdiction of Hong Kong courts.</li>
+                <li>If any part of these terms is invalid, the remaining terms will remain in full force.</li>
+            </ul>
+
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>For access to the complete policy or if you have any questions, please contact us:</p>
+                <p><strong>TopChance Engineering Co. Ltd.</strong><br>
+                Address: Room D, 6/F, Sun Fai Commercial Centre, 576 Nathan Road, Mong Kok, Kowloon, Hong Kong<br>
+                Phone: (852) 2390-3535<br>
+                Email: info@topchance.com.hk</p>
+            </div>
+            
+            <p><em>In case of any discrepancies between the Chinese and English versions of these terms and conditions, the Chinese version shall prevail.</em></p>
+        </div>
+
+        <div class="back-to-home">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> 返回首頁 / Back to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const toggleIcon = document.querySelector('.toggle-icon i');
+        
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            toggleIcon.classList.toggle('fa-moon');
+            toggleIcon.classList.toggle('fa-sun');
+        });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(function() {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+
+        // Language Switch Function
+        function switchLang(lang) {
+            // Hide all content
+            document.getElementById('terms-zh').classList.add('hidden');
+            document.getElementById('terms-en').classList.add('hidden');
+            
+            // Show selected language content
+            document.getElementById('terms-' + lang).classList.remove('hidden');
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Language dropdown toggle
+        const langBtn = document.querySelector('.lang-selector .lang-btn');
+        const langDropdown = document.querySelector('.lang-dropdown');
+        
+        if (langBtn && langDropdown) {
+            langBtn.addEventListener('click', function() {
+                langBtn.classList.toggle('active');
+                langDropdown.classList.toggle('active');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                    langBtn.classList.remove('active');
+                    langDropdown.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

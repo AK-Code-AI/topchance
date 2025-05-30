@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隱私政策 - 峰盛工程有限公司</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/lang.js" defer></script>
+    <style>
+        .privacy-container {
+            max-width: 100rem;
+            margin: 0 auto;
+            padding: 5rem 5%;
+            background-color: var(--color-light);
+            color: var(--color-text-dark);
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        .dark-mode .privacy-container {
+            background-color: var(--color-dark);
+            color: var(--color-text-light);
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .privacy-logo {
+            max-width: 20rem;
+            margin-bottom: 3rem;
+        }
+
+        .privacy-title {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--color-primary);
+        }
+
+        .last-updated {
+            font-size: 1.4rem;
+            color: var(--color-text-muted);
+            margin-bottom: 3rem;
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .lang-btn {
+            padding: 1rem 2rem;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 1.4rem;
+            transition: all var(--transition-normal);
+        }
+
+        .lang-btn.active {
+            background-color: var(--color-secondary);
+        }
+
+        .lang-btn:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-2px);
+        }
+
+        .privacy-content {
+            max-width: 80rem;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .privacy-content h2 {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            margin: 3rem 0 1.5rem 0;
+            color: var(--color-secondary);
+            border-left: 4px solid var(--color-primary);
+            padding-left: 2rem;
+        }
+
+        .privacy-content p {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .privacy-content ul {
+            margin: 2rem 0;
+            padding-left: 3rem;
+        }
+
+        .privacy-content li {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            margin: 3rem 0;
+            border: 1px solid var(--color-border);
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 5rem 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: var(--gradient-primary);
+            color: var(--color-text-light);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-size: 1.6rem;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-md);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .back-to-home {
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 1.6rem;
+            transition: all var(--transition-normal);
+        }
+
+        .back-btn:hover {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 3rem 3%;
+            }
+
+            .privacy-title {
+                font-size: 3rem;
+            }
+
+            .privacy-content h2 {
+                font-size: 2rem;
+            }
+
+            .lang-switch {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lang-btn {
+                width: 20rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="theme-toggle">
+        <div class="toggle-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+    </div>
+
+    <div class="lang-selector">
+        <div class="lang-btn">
+            繁體 <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="lang-dropdown">
+            <ul>
+                <li><a href="#" data-lang="zh-hant">繁體</a></li>
+                <li><a href="#" data-lang="en">EN</a></li>
+                <li><a href="#" data-lang="zh-hans">简体</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="privacy-container">
+        <div class="privacy-header">
+            <img src="images/88.jpeg" alt="峰盛工程有限公司標誌" class="privacy-logo">
+            <h1 class="privacy-title">隱私政策聲明</h1>
+            <p class="last-updated">最後更新：2025年1月</p>
+            
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+
+        <div id="privacy-zh" class="privacy-content">
+            <p>峰盛工程有限公司（「本公司」、「我們」）致力於保護您的個人資料及隱私。本聲明說明我們如何收集、使用、儲存及保護您的個人資料。我們遵循香港《個人資料（私隱）條例》及其他相關法律法規的要求。</p>
+            
+            <h2>1. 收集資料類型</h2>
+            <p>我們可能會收集以下類型的個人資料：</p>
+            <ul>
+                <li><strong>聯絡資料：</strong>包括姓名、公司名稱、職位、地址、電話號碼、電子郵件地址</li>
+                <li><strong>項目相關資料：</strong>與工程項目相關的技術要求、預算資訊、時間安排</li>
+                <li><strong>網站使用資料：</strong>瀏覽紀錄、IP地址、瀏覽器類型、訪問時間</li>
+                <li><strong>通訊記錄：</strong>與我們的通訊記錄、查詢內容、服務請求</li>
+                <li><strong>商業資料：</strong>合約資訊、付款記錄、發票詳情</li>
+            </ul>
+
+            <h2>2. 資料收集方式</h2>
+            <p>我們通過以下方式收集您的個人資料：</p>
+            <ul>
+                <li>直接收集：通過網站表格、電話、電子郵件、會議或其他直接聯絡方式</li>
+                <li>自動收集：通過網站cookies、分析工具、追蹤技術</li>
+                <li>第三方來源：通過合法的第三方服務提供商或公開資料源</li>
+            </ul>
+
+            <h2>3. 資料用途</h2>
+            <p>所收集的個人資料將用於以下合法用途：</p>
+            <ul>
+                <li><strong>服務提供：</strong>提供工程諮詢、設計、施工管理等專業服務</li>
+                <li><strong>客戶關係管理：</strong>處理查詢、維護客戶關係、提供客戶支援</li>
+                <li><strong>合約履行：</strong>執行合約條款、處理付款、提供後續服務</li>
+                <li><strong>市場推廣：</strong>發送相關服務資訊、行業動態（需獲得您的同意）</li>
+                <li><strong>法律合規：</strong>遵守適用的法律法規要求</li>
+                <li><strong>業務改善：</strong>分析服務表現、改善網站功能、優化用戶體驗</li>
+            </ul>
+
+            <h2>4. 資料保安措施</h2>
+            <p>我們實施全面的保安措施以保護您的個人資料：</p>
+            <ul>
+                <li><strong>技術保安：</strong>使用加密技術、防火牆、安全服務器</li>
+                <li><strong>訪問控制：</strong>限制員工對個人資料的訪問權限</li>
+                <li><strong>定期審查：</strong>定期檢查和更新保安措施</li>
+                <li><strong>員工培訓：</strong>為員工提供資料保護培訓</li>
+                <li><strong>事故應對：</strong>建立資料洩露應對程序</li>
+            </ul>
+
+            <h2>5. 資料分享和披露</h2>
+            <p>我們不會在未經您同意的情況下將您的個人資料出售、租賃或分享給第三方。但在以下情況下，我們可能會披露您的資料：</p>
+            <ul>
+                <li>獲得您的明確同意</li>
+                <li>法律要求或法院命令</li>
+                <li>為執行合約而需要與可信賴的第三方服務提供商分享</li>
+                <li>為保護我們或他人的合法權益</li>
+                <li>在業務轉讓或合併的情況下</li>
+            </ul>
+
+            <h2>6. 資料保留期</h2>
+            <p>我們將根據以下原則保留您的個人資料：</p>
+            <ul>
+                <li>在服務關係存續期間</li>
+                <li>法律要求的保留期限</li>
+                <li>合約規定的期限</li>
+                <li>在您要求刪除資料後，我們將在合理時間內刪除，除非法律另有規定</li>
+            </ul>
+
+            <h2>7. 您的權利</h2>
+            <p>根據適用的隱私法律，您享有以下權利：</p>
+            <ul>
+                <li><strong>查閱權：</strong>要求查閱我們持有的您的個人資料</li>
+                <li><strong>更正權：</strong>要求更正不準確或不完整的個人資料</li>
+                <li><strong>刪除權：</strong>在特定情況下要求刪除您的個人資料</li>
+                <li><strong>限制處理權：</strong>在特定情況下要求限制處理您的個人資料</li>
+                <li><strong>資料可攜權：</strong>要求以結構化、通用的格式獲得您的資料</li>
+                <li><strong>反對權：</strong>反對我們處理您的個人資料</li>
+                <li><strong>撤回同意權：</strong>撤回您之前給予的同意</li>
+            </ul>
+
+            <h2>8. Cookies和追蹤技術</h2>
+            <p>我們的網站使用cookies和其他追蹤技術來：</p>
+            <ul>
+                <li>改善網站功能和用戶體驗</li>
+                <li>分析網站使用情況</li>
+                <li>記住您的偏好設置</li>
+                <li>提供個性化內容</li>
+            </ul>
+            <p>您可以通過瀏覽器設置來管理cookies，但這可能會影響網站的某些功能。</p>
+
+            <div class="contact-info">
+                <h2>9. 聯絡資訊</h2>
+                <p>如對本隱私政策有任何查詢、建議或要求行使您的權利，請透過以下方式聯絡我們：</p>
+                <p><strong>峰盛工程有限公司</strong><br>
+                地址：香港九龍旺角新填地街坊576號新輝商業中心6樓D室<br>
+                電話：（852）2390-3535<br>
+                電子郵件：info@kenway.com.hk<br>
+                資料保護專員：privacy@kenway.com.hk</p>
+            </div>
+
+            <h2>10. 政策更新</h2>
+            <p>我們可能會不時更新本隱私政策。任何重大變更將在我們的網站上公布，並在法律要求的情況下通知您。建議您定期查閱本政策以了解最新資訊。</p>
+
+            <p><em>本隱私政策的中文版本與英文版本如有任何差異，以中文版本為準。</em></p>
+        </div>
+
+        <div id="privacy-en" class="privacy-content hidden">
+            <h1>Privacy Policy Statement</h1>
+            <p>Top Chance Engineering Co., Ltd. ("the Company", "we") is committed to protecting your personal data and privacy. This statement explains how we collect, use, store, and safeguard your personal data. We comply with the Hong Kong Personal Data (Privacy) Ordinance and other applicable laws and regulations.</p>
+            
+            <h2>1. Types of Data Collected</h2>
+            <p>We may collect the following types of personal data:</p>
+            <ul>
+                <li><strong>Contact Information:</strong> Including name, company name, position, address, telephone number, email address</li>
+                <li><strong>Project-related Data:</strong> Technical requirements, budget information, scheduling related to engineering projects</li>
+                <li><strong>Website Usage Data:</strong> Browsing history, IP address, browser type, access times</li>
+                <li><strong>Communication Records:</strong> Communication records with us, enquiry content, service requests</li>
+                <li><strong>Business Data:</strong> Contract information, payment records, invoice details</li>
+            </ul>
+
+            <h2>2. Data Collection Methods</h2>
+            <p>We collect your personal data through the following methods:</p>
+            <ul>
+                <li>Direct Collection: Through website forms, telephone, email, meetings, or other direct contact methods</li>
+                <li>Automatic Collection: Through website cookies, analytics tools, tracking technologies</li>
+                <li>Third-party Sources: Through legitimate third-party service providers or public data sources</li>
+            </ul>
+
+            <h2>3. Use of Data</h2>
+            <p>The personal data collected will be used for the following legitimate purposes:</p>
+            <ul>
+                <li><strong>Service Provision:</strong> Providing engineering consultation, design, construction management and other professional services</li>
+                <li><strong>Customer Relationship Management:</strong> Handling enquiries, maintaining customer relationships, providing customer support</li>
+                <li><strong>Contract Performance:</strong> Executing contract terms, processing payments, providing follow-up services</li>
+                <li><strong>Marketing:</strong> Sending relevant service information, industry updates (with your consent)</li>
+                <li><strong>Legal Compliance:</strong> Complying with applicable laws and regulations</li>
+                <li><strong>Business Improvement:</strong> Analyzing service performance, improving website functionality, optimizing user experience</li>
+            </ul>
+
+            <h2>4. Data Security Measures</h2>
+            <p>We implement comprehensive security measures to protect your personal data:</p>
+            <ul>
+                <li><strong>Technical Security:</strong> Using encryption technology, firewalls, secure servers</li>
+                <li><strong>Access Control:</strong> Limiting employee access to personal data</li>
+                <li><strong>Regular Reviews:</strong> Regularly reviewing and updating security measures</li>
+                <li><strong>Staff Training:</strong> Providing data protection training for employees</li>
+                <li><strong>Incident Response:</strong> Establishing data breach response procedures</li>
+            </ul>
+
+            <h2>5. Data Sharing and Disclosure</h2>
+            <p>We will not sell, lease, or share your personal data with third parties without your consent. However, we may disclose your data under the following circumstances:</p>
+            <ul>
+                <li>With your explicit consent</li>
+                <li>Legal requirements or court orders</li>
+                <li>Sharing with trusted third-party service providers for contract execution</li>
+                <li>To protect our or others' legitimate interests</li>
+                <li>In case of business transfer or merger</li>
+            </ul>
+
+            <h2>6. Data Retention Period</h2>
+            <p>We will retain your personal data according to the following principles:</p>
+            <ul>
+                <li>During the service relationship</li>
+                <li>Legal retention requirements</li>
+                <li>Contract-specified periods</li>
+                <li>After you request data deletion, we will delete it within a reasonable time unless otherwise required by law</li>
+            </ul>
+
+            <h2>7. Your Rights</h2>
+            <p>Under applicable privacy laws, you have the following rights:</p>
+            <ul>
+                <li><strong>Right to Access:</strong> Request access to your personal data we hold</li>
+                <li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete personal data</li>
+                <li><strong>Right to Erasure:</strong> Request deletion of your personal data under specific circumstances</li>
+                <li><strong>Right to Restrict Processing:</strong> Request restriction of processing your personal data under specific circumstances</li>
+                <li><strong>Right to Data Portability:</strong> Request your data in a structured, common format</li>
+                <li><strong>Right to Object:</strong> Object to our processing of your personal data</li>
+                <li><strong>Right to Withdraw Consent:</strong> Withdraw consent you previously gave</li>
+            </ul>
+
+            <h2>8. Cookies and Tracking Technologies</h2>
+            <p>Our website uses cookies and other tracking technologies to:</p>
+            <ul>
+                <li>Improve website functionality and user experience</li>
+                <li>Analyze website usage</li>
+                <li>Remember your preference settings</li>
+                <li>Provide personalized content</li>
+            </ul>
+            <p>You can manage cookies through your browser settings, but this may affect certain website functions.</p>
+
+            <div class="contact-info">
+                <h2>9. Contact Information</h2>
+                <p>For any enquiries, suggestions, or requests to exercise your rights regarding this privacy policy, please contact us through:</p>
+                <p><strong>Top Chance Engineering Co., Ltd.</strong><br>
+                Address: Room D, 6/F, Sun Fai Commercial Centre, 576 Nathan Road, Mong Kok, Kowloon, Hong Kong<br>
+                Phone: (852) 2390-3535<br>
+                Email: info@kenway.com.hk<br>
+                Data Protection Officer: privacy@kenway.com.hk</p>
+            </div>
+
+            <h2>10. Policy Updates</h2>
+            <p>We may update this privacy policy from time to time. Any significant changes will be published on our website and, where legally required, we will notify you. We recommend regularly reviewing this policy to stay informed of the latest information.</p>
+
+            <p><em>In case of any discrepancies between the Chinese and English versions of this privacy policy, the Chinese version shall prevail.</em></p>
+        </div>
+
+        <div class="back-to-home">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> 返回首頁 / Back to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const toggleIcon = document.querySelector('.toggle-icon i');
+        
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            toggleIcon.classList.toggle('fa-moon');
+            toggleIcon.classList.toggle('fa-sun');
+        });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(function() {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+
+        // Language Switch Function
+        function switchLang(lang) {
+            // Hide all content
+            document.getElementById('privacy-zh').classList.add('hidden');
+            document.getElementById('privacy-en').classList.add('hidden');
+            
+            // Show selected language content
+            document.getElementById('privacy-' + lang).classList.remove('hidden');
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Language dropdown toggle
+        const langBtn = document.querySelector('.lang-selector .lang-btn');
+        const langDropdown = document.querySelector('.lang-dropdown');
+        
+        if (langBtn && langDropdown) {
+            langBtn.addEventListener('click', function() {
+                langBtn.classList.toggle('active');
+                langDropdown.classList.toggle('active');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                    langBtn.classList.remove('active');
+                    langDropdown.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
